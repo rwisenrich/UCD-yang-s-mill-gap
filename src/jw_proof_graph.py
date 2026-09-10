@@ -16,7 +16,8 @@ rows=[
  {'id':'JW-07B','requirement':'Strong-block quadratic contraction basin','formula':'eta_(k+1)<=A eta_k^2/delta*','status':'PASS_ABSTRACT_THEOREM_AND_NUMERIC_CERTIFICATE','dependency':'schur_rg_canonical_certificate.json; locality path count A<=400 under stated extraction norm'},
  {'id':'JW-07C','requirement':'Native/standard Wilson RG enters and remains in certified Schur basin','formula':'exists k0: (eta_k,delta_k,Delta_k) in B_gap for all k>=k0','status':'OPEN_BRIDGE_LEMMA','dependency':'JW-06B + explicit matching of Wilson effective action to Schur extraction norm'},
  {'id':'JW-07D','requirement':'Regulator- and volume-uniform physical spectral gap','formula':'inf_(r,s) gap(H_rs)>=m*>0','status':'DEPENDENT_ON_JW07C','dependency':'JW-07A/B/C'},
- {'id':'JW-08A','requirement':'Infinite-volume limits of gauge-invariant local expectations','formula':'omega_infty(A)=lim_s omega_rs(A)','status':'OPEN_CONVERGENCE_LEMMA','dependency':'uniform clustering/tightness in gauge-invariant local algebra'},
+ {'id':'JW-07E','requirement':'Rigorous strong-coupling infinite-volume endpoint for SU(N) lattice Yang-Mills','formula':'|beta|<1/[16(d-1)] => unique infinite-volume state + Poincare/LSI + exponential clustering','status':'PASS_EXTERNAL_THEOREM_IN_ITS_NORMALIZATION','dependency':'Shen-Zhu-Zhu arXiv:2204.12737'},
+ {'id':'JW-08A','requirement':'Infinite-volume limits of gauge-invariant local expectations for the exact blocked action','formula':'omega_infty(A)=lim_s omega_rs(A)','status':'DEPENDENT_ON_JW07C_AND_JW07E_OR_DIRECT_CLUSTERING','dependency':'match exact blocked action to strong-coupling theorem class, or prove uniform clustering directly'},
  {'id':'JW-08B','requirement':'Continuum Schwinger distributions exist','formula':'S_n=lim_r lim_s S_n^(r,s)','status':'OPEN_CONVERGENCE_LEMMA','dependency':'UV renormalization + composite-operator bounds'},
  {'id':'JW-08C','requirement':'Non-Gaussian/nontrivial continuum state','formula':'S_4^T not identically 0 (or equivalent)','status':'OPEN_PERSISTENCE_LEMMA','dependency':'nonzero connected gauge-invariant continuum correlator'},
  {'id':'JW-08D','requirement':'Local quantum fields corresponding to gauge-invariant curvature polynomials and covariant derivatives','formula':'O_P^(a)=sum_Q Z_PQ(a) P_Q(U)/a^dim(P) -> O_P','status':'OPEN_COMPOSITE_OPERATOR_RENORMALIZATION','dependency':'operator mixing bounds + JW-08B'},
@@ -35,7 +36,7 @@ with open(RES/'jaffe_witten_obligation_ledger_v4.csv','w',newline='') as f:
 closed=[r['id'] for r in rows if r['status'].startswith('PASS')]
 openids=[r['id'] for r in rows if r['status'].startswith('OPEN')]
 dep=[r['id'] for r in rows if r['status'].startswith('DEPENDENT')]
-critical=['JW-06B','JW-07C','JW-08A','JW-08B','JW-08C','JW-08D','JW-08E','JW-09B','JW-09C','JW-13']
+critical=['JW-06B','JW-07C','JW-08B','JW-08C','JW-08D','JW-08E','JW-09B','JW-09C','JW-13']
 out={'release':'v4.0','closed_or_conditional_theorems':closed,'open_primary_lemmas':openids,'dependent_conclusions':dep,'critical_path':critical,
      'shortest_SU3_chain':['JW-06B','JW-07C','JW-07D','JW-08A','JW-08B','JW-08C','JW-08D','JW-08E','JW-09B','JW-09C','JW-10','JW-11','JW-12A','JW-12B'],
      'definition_of_completion':'All primary lemmas on the critical path are promoted to proved theorems with constants independent of regulator and volume; then JW-10/11/12 follow.'}
