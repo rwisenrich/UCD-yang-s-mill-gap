@@ -1,6 +1,6 @@
 {
   "trials": 200,
-  "minimum_coarse_kernel_eigenvalue": 23.546386131514364,
-  "minimum_test_quadratic_form": 989.2388885160248,
+  "minimum_coarse_kernel_eigenvalue": 23.54638613151441,
+  "minimum_test_quadratic_form": 989.2388885160246,
   "pass": true
 }

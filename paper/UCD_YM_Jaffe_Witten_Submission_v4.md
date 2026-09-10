@@ -566,6 +566,21 @@ The unperturbed electric operator is a sum of independent positive group Laplaci
 $$
 -\Delta_G|_{V_\lambda\otimes V_\lambda^*}=C_2(\lambda).
 $$
+
+A rigorous Euclidean strong-coupling endpoint is also available for the standard lattice theory. In the t'Hooft-scaled normalization of Shen, Zhu, and Zhu, the $SU(N)$ lattice Yang–Mills measure in dimension $d>1$ has a unique infinite-volume Gibbs state, satisfies Poincaré and logarithmic-Sobolev inequalities, and exhibits exponential decay of correlations when
+
+$$
+|\beta|<\frac{1}{16(d-1)}.
+$$
+
+Hence in four dimensions the explicit sufficient region is
+
+$$
+\boxed{|\beta|<\frac1{48}}.
+$$
+
+This supplies a quantitative infrared endpoint for the A→B chain: once the exact blocked Wilson/heat-kernel action is shown to enter the theorem's strong-coupling action class with controlled residual interactions, infinite-volume convergence and exponential clustering follow from an existing rigorous theorem. The ultraviolet-to-infrared burden is thereby localized to the matching estimate that carries the asymptotically-free regulator into that certified basin while preserving gauge invariance, locality, and reflection positivity.
+
 For compact simple $G$, every nontrivial irreducible representation has
 
 $$
@@ -1036,3 +1051,4 @@ $$
 12. Y. Guo, Z. Li, G. Yang, and G. Zhu, *Bootstrapping SU(3) Lattice Yang–Mills Theory*, JHEP 12 (2025) 033; arXiv:2502.14421.
 13. R. F. Streater and A. S. Wightman, *PCT, Spin and Statistics, and All That*, Princeton University Press.
 14. R. Haag, *Local Quantum Physics*, Springer.
+15. H. Shen, R. Zhu, and X. Zhu, *A Stochastic Analysis Approach to Lattice Yang–Mills at Strong Coupling*, arXiv:2204.12737 (2022; revised 2026).

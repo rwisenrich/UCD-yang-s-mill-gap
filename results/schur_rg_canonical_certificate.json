@@ -2,8 +2,8 @@
   "g": 8.0,
   "lambda": 0.05,
   "LB": 1.0,
-  "E0": -0.2000036198173253,
-  "Delta0": 0.09998915391358655,
+  "E0": -0.20000361981733375,
+  "Delta0": 0.09998915391359503,
   "eta0": 0.0703125,
   "delta0": 170.74167028648398,
   "A": 400.0,
@@ -14,7 +14,7 @@
   "infinite_self_energy_sum_bound": 6.496071390629655e-05,
   "certified_Q_separation_floor": 170.74154036505618,
   "Q_separation_self_consistent": true,
-  "certified_gap_floor": 0.09985923248577395,
+  "certified_gap_floor": 0.09985923248578243,
   "positive_gap_floor": true,
   "sequence": [
     {
@@ -90,5 +90,5 @@
       "cumulative_self_energy": 6.426954818815002e-05
     }
   ],
-  "Acrit_delta_half": 1213.4595836811004
+  "Acrit_delta_half": 1213.4595836811006
 }

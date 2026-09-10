@@ -11,7 +11,8 @@ JW-07A,Exact Schur correction has no linear term,Sigma(E)=B(D-E)^-1 B*,PASS_ALGE
 JW-07B,Strong-block quadratic contraction basin,eta_(k+1)<=A eta_k^2/delta*,PASS_ABSTRACT_THEOREM_AND_NUMERIC_CERTIFICATE,schur_rg_canonical_certificate.json; locality path count A<=400 under stated extraction norm
 JW-07C,Native/standard Wilson RG enters and remains in certified Schur basin,"exists k0: (eta_k,delta_k,Delta_k) in B_gap for all k>=k0",OPEN_BRIDGE_LEMMA,JW-06B + explicit matching of Wilson effective action to Schur extraction norm
 JW-07D,Regulator- and volume-uniform physical spectral gap,"inf_(r,s) gap(H_rs)>=m*>0",DEPENDENT_ON_JW07C,JW-07A/B/C
-JW-08A,Infinite-volume limits of gauge-invariant local expectations,omega_infty(A)=lim_s omega_rs(A),OPEN_CONVERGENCE_LEMMA,uniform clustering/tightness in gauge-invariant local algebra
+JW-07E,Rigorous strong-coupling infinite-volume endpoint for SU(N) lattice Yang-Mills,|beta|<1/[16(d-1)] => unique infinite-volume state + Poincare/LSI + exponential clustering,PASS_EXTERNAL_THEOREM_IN_ITS_NORMALIZATION,Shen-Zhu-Zhu arXiv:2204.12737
+JW-08A,Infinite-volume limits of gauge-invariant local expectations for the exact blocked action,omega_infty(A)=lim_s omega_rs(A),DEPENDENT_ON_JW07C_AND_JW07E_OR_DIRECT_CLUSTERING,"match exact blocked action to strong-coupling theorem class, or prove uniform clustering directly"
 JW-08B,Continuum Schwinger distributions exist,"S_n=lim_r lim_s S_n^(r,s)",OPEN_CONVERGENCE_LEMMA,UV renormalization + composite-operator bounds
 JW-08C,Non-Gaussian/nontrivial continuum state,S_4^T not identically 0 (or equivalent),OPEN_PERSISTENCE_LEMMA,nonzero connected gauge-invariant continuum correlator
 JW-08D,Local quantum fields corresponding to gauge-invariant curvature polynomials and covariant derivatives,O_P^(a)=sum_Q Z_PQ(a) P_Q(U)/a^dim(P) -> O_P,OPEN_COMPOSITE_OPERATOR_RENORMALIZATION,operator mixing bounds + JW-08B

@@ -10,13 +10,13 @@
     "JW-06A",
     "JW-07A",
     "JW-07B",
+    "JW-07E",
     "JW-09A",
     "JW-12A"
   ],
   "open_primary_lemmas": [
     "JW-06B",
     "JW-07C",
-    "JW-08A",
     "JW-08B",
     "JW-08C",
     "JW-08D",
@@ -27,13 +27,13 @@
   ],
   "dependent_conclusions": [
     "JW-07D",
+    "JW-08A",
     "JW-11",
     "JW-12B"
   ],
   "critical_path": [
     "JW-06B",
     "JW-07C",
-    "JW-08A",
     "JW-08B",
     "JW-08C",
     "JW-08D",
