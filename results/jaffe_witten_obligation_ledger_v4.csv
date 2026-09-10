@@ -14,6 +14,8 @@ JW-07D,Regulator- and volume-uniform physical spectral gap,"inf_(r,s) gap(H_rs)>
 JW-08A,Infinite-volume limits of gauge-invariant local expectations,omega_infty(A)=lim_s omega_rs(A),OPEN_CONVERGENCE_LEMMA,uniform clustering/tightness in gauge-invariant local algebra
 JW-08B,Continuum Schwinger distributions exist,"S_n=lim_r lim_s S_n^(r,s)",OPEN_CONVERGENCE_LEMMA,UV renormalization + composite-operator bounds
 JW-08C,Non-Gaussian/nontrivial continuum state,S_4^T not identically 0 (or equivalent),OPEN_PERSISTENCE_LEMMA,nonzero connected gauge-invariant continuum correlator
+JW-08D,Local quantum fields corresponding to gauge-invariant curvature polynomials and covariant derivatives,O_P^(a)=sum_Q Z_PQ(a) P_Q(U)/a^dim(P) -> O_P,OPEN_COMPOSITE_OPERATOR_RENORMALIZATION,operator mixing bounds + JW-08B
+JW-08E,"Short-distance asymptotic-freedom matching, stress tensor, and OPE structure","O_P(x)O_Q(0) ~ sum_R C_PQ^R(x,mu,g(mu)) O_R(0); partial^mu T_munu=0",OPEN_SHORT_DISTANCE_STRUCTURE,JW-06B + JW-08D + Ward identities
 JW-09A,Reflection positivity survives the limit,<Theta F F>=lim <Theta F F>_rs >=0,PASS_LIMIT_LEMMA_IF_JW08B,JW-03 + convergence
 JW-09B,Euclidean invariance restored,S_n(Rx_i+a)=S_n(x_i),OPEN_SYMMETRY_LIMIT_LEMMA,rotational restoration / regulator universality
 JW-09C,"Regularity, symmetry, clustering OS axioms",OS0-OS4/appropriate equivalent,OPEN_AXIOM_BOUNDS,JW-08 + JW-07D
