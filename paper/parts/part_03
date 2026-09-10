@@ -151,6 +151,67 @@ for some $n\ge4$, or another equivalent non-Gaussian observable criterion holds.
 
 The finite workbench already contains nonzero connected Wilson spectral weight; B3 is its continuum persistence statement.
 
+# 15.1 Local curvature fields, stress tensor, and short-distance operator structure
+
+The Jaffe–Witten specification requires the continuum theory to contain local gauge-invariant quantum fields corresponding to classical gauge-invariant differential polynomials in the curvature and its covariant derivatives. Let
+
+$$
+P(F,DF,D^2F,\ldots)
+$$
+
+be such a polynomial of engineering dimension $d_P$. On a lattice, curvature is represented by oriented plaquette combinations. For $SU(N)$ one convenient Lie-algebra-valued representative is
+
+$$
+F_{\mu\nu}^{(a)}(x)
+=
+\frac{1}{2ia^2g_0(a)}
+\left[
+U_{\mu\nu}(x)-U_{\mu\nu}(x)^\dagger
+-\frac{1}{N}\operatorname{Tr}\big(U_{\mu\nu}(x)-U_{\mu\nu}(x)^\dagger\big)I
+\right],
+$$
+
+and covariant finite differences give approximants to $D_\rho F_{\mu\nu}$. Gauge-invariant lattice composites $P_j^{(a)}$ are then mixed and renormalized by a finite matrix at each engineering dimension,
+
+$$
+\mathcal O_P^{(a)}
+=
+\sum_{j:\,d_j\le d_P}Z_{Pj}(a,\mu)P_j^{(a)}.
+$$
+
+The required continuum statement is:
+
+**Bridge Lemma B4 (composite-field convergence).** For every gauge-invariant differential polynomial $P(F,DF,\ldots)$ there is a renormalized lattice approximant $\mathcal O_P^{(a)}$ such that all mixed Schwinger distributions containing finitely many such insertions converge in $\mathcal S'$ as $a\to0$, and the limiting operators transform covariantly under the restored Euclidean group.
+
+The stress tensor is obtained by differentiating an anisotropic/background-metric lattice action with respect to the metric and then renormalizing the finite set of operators allowed by symmetry. Its continuum Ward identity is
+
+$$
+\partial^\mu T_{\mu\nu}=0,
+$$
+
+and after OS reconstruction
+
+$$
+H=\int_{\mathbb R^3}T_{00}(0,\mathbf x)\,d^3x
+$$
+
+in the standard quadratic-form sense on the energy domain.
+
+At short distance, asymptotic freedom fixes the ultraviolet coefficients in products of local fields. The required operator-product statement is
+
+$$
+\mathcal O_P(x)\mathcal O_Q(0)
+\sim
+\sum_R C_{PQ}^{\ R}(x,\mu,g(\mu))\mathcal O_R(0),
+\qquad |x|\downarrow0,
+$$
+
+with $g(\mu)\to0$ as $\mu\to\infty$ and Wilson coefficients having the perturbative asymptotic expansion determined by Yang–Mills renormalization.
+
+**Bridge Lemma B5 (short-distance matching).** The renormalized continuum composite fields of B4 obey the Yang–Mills Ward identities and their short-distance Schwinger distributions have the asymptotic-freedom/OPE singular structure fixed by perturbative renormalization. In particular a conserved renormalized stress tensor exists.
+
+B4 and B5 are the exact operator-theoretic form of the local-field and ultraviolet requirements in the Jaffe–Witten problem statement; they prevent a merely gapped lattice theory from being substituted for four-dimensional quantum Yang–Mills.
+
 # 16. Reflection positivity and passage to the limit
 
 At finite regulator the Wilson approximation is reflection positive; the heat-kernel formulation exhibits positivity directly through nonnegative character coefficients.
@@ -179,7 +240,7 @@ The same argument passes permutation symmetry. Translation invariance passes fro
 
 # 17. C: Osterwalder–Schrader reconstruction
 
-Assume B1–B3 and C1 together with the standard OS regularity bounds. Then the limiting Schwinger family satisfies the reconstruction hypotheses. The OS quotient is formed from positive-time test polynomials by
+Assume B1–B5 and C1 together with the standard OS regularity bounds. Then the limiting Schwinger family satisfies the reconstruction hypotheses. The OS quotient is formed from positive-time test polynomials by
 
 $$
 (F,G)_{OS}=\langle\Theta F,G\rangle,
