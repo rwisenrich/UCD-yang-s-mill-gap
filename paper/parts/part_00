@@ -1,0 +1,189 @@
+---
+title: "UCD Yang–Mills Existence and Mass-Gap Construction"
+subtitle: "Jaffe–Witten Specification: Compact-Group Regulator, Exact Schur Renormalization, Reflection Positivity, and Spectral Transfer"
+author: "Richard Wise"
+date: "10 September 2026"
+geometry: margin=0.9in
+fontsize: 10pt
+---
+
+# Abstract
+
+The Yang–Mills existence and mass-gap problem requires, for a compact simple gauge group $G$, a nontrivial quantum Yang–Mills theory on $\mathbb R^4$ with a physical Hamiltonian whose spectrum has a strictly positive interval above the vacuum containing no spectrum. This manuscript places the UCD construction directly into the Jaffe–Witten proof architecture.
+
+The proof regulator is the standard compact-group lattice gauge system with link Hilbert space $L^2(G)$, gauge-invariant plaquette action, positive transfer structure, and independent ultraviolet and thermodynamic limits. For $SU(3)$ the Peter–Weyl decomposition
+
+$$
+L^2(SU(3))=\widehat\bigoplus_{p,q\ge0}V_{p,q}\otimes V_{p,q}^*
+$$
+
+gives a controlled finite-matrix verification hierarchy. The previously constructed 20-dimensional UCD quantum-link block is retained as an independent finite algebraic workbench; it is not substituted for $L^2(SU(3))$ in the continuum proof.
+
+The manuscript proves an exact quadratic Schur-stability theorem. If the eliminated spectral sector has scale-uniform separation $\delta_*>0$ and the local interface norm is $\eta_k$, then exact Feshbach reduction generates no term linear in the eliminated coupling and a local two-step path count $A$ gives
+
+$$
+\eta_{k+1}\le {\frac{A}{\delta_*}}\eta_k^2.
+$$
+
+For $x_0=A\eta_0/\delta_*<1$ this yields double-exponential contraction and the summable self-energy bound
+
+$$
+\sum_{k\ge0}\|\Sigma_k\|
+\le
+{\frac{\delta_*}{A^2}}{\frac{x_0^2}{1-x_0^2}}.
+$$
+
+Consequently an initial spectral gap $\Delta_0$ survives all subsequent exact Schur steps whenever
+
+$$
+\Delta_0>
+{\frac{2\delta_*}{A^2}}{\frac{x_0^2}{1-x_0^2}}.
+$$
+
+The 4-dimensional hypercubic plaquette overlap graph has degree at most $20$ through shared links, giving the conservative ordered two-step path majorant $A\le400$. The executable UCD $SU(3)$ block provides a numerical stress certificate for this theorem with $x_0=0.3294450611$ and a positive infinite-step gap floor $0.09985923249$ in the specified strong-block test point.
+
+The remaining Jaffe–Witten chain is formulated as explicit lemmas: all-field UV-to-block renormalization control, entrance of the standard Wilson/heat-kernel regulator into the Schur gap basin, convergence and nontriviality of the gauge-invariant Schwinger family, restoration of Euclidean symmetry, Osterwalder–Schrader reconstruction, and spectral-gap transfer. The package includes executable tests, machine-readable proof dependencies, Peter–Weyl truncation data, reflection-positive heat-kernel checks, Wilson continuum scaling, Schur certificates, and independent verification.
+
+# 1. Exact Jaffe–Witten target
+
+Let $G$ be a compact simple Lie group. We seek a quantum gauge theory on $\mathbb R^4$ with Hilbert space $\mathcal H$, vacuum $\Omega$, local gauge-invariant observable algebra $\mathcal A$, translation generators $P_\mu$, positive Hamiltonian $H=P_0$, and
+
+$$
+\boxed{\operatorname{Spec}(H)\cap(0,\Delta)=\varnothing}
+$$
+
+for some finite $\Delta>0$.
+
+The construction must satisfy axiomatic properties at least as strong as the Wightman/Osterwalder–Schrader formulations used in the Jaffe–Witten specification. In Euclidean form this means constructing gauge-invariant Schwinger distributions $S_n$ with the positivity, covariance, locality/symmetry, regularity, and clustering properties required for reconstruction.
+
+We organize the proof as
+
+$$
+\boxed{A\Longrightarrow B\Longrightarrow C\Longrightarrow D}
+$$
+
+with:
+
+**A.** a regulator- and volume-uniform positive physical spectral threshold;
+
+**B.** existence of a non-Gaussian Euclidean continuum Yang–Mills state on $\mathbb R^4$;
+
+**C.** Osterwalder–Schrader reconstruction of the physical relativistic theory;
+
+**D.** transfer of the regulator-uniform spectral threshold to the reconstructed Hamiltonian.
+
+# 2. Proof regulator: compact-group lattice Yang–Mills
+
+Let $\Lambda_{a,L}\subset a\mathbb Z^4$ be a periodic hypercubic lattice with physical side $L$. Each oriented edge $e$ carries a group element $U_e\in G$ with $U_{\bar e}=U_e^{-1}$. The Euclidean lattice configuration space is
+
+$$
+\mathcal C_{a,L}=G^{E(\Lambda_{a,L})}.
+$$
+
+For a vertex gauge transformation $g=(g_x)$,
+
+$$
+U_{xy}\mapsto g_xU_{xy}g_y^{-1}.
+$$
+
+For an oriented plaquette $p$,
+
+$$
+U_p=\prod_{e\in\partial p}U_e,
+\qquad
+U_p\mapsto g_xU_pg_x^{-1},
+$$
+
+so every class function of $U_p$ is gauge invariant.
+
+The Wilson action in a unitary representation $R$ is
+
+$$
+S_W(U)=\beta\sum_p\left(1-{\frac{1}{d_R}}\operatorname{Re}\chi_R(U_p)\right).
+$$
+
+The finite Euclidean measure is
+
+$$
+d\mu_{a,L}(U)=Z_{a,L}^{-1}e^{-S_W(U)}\prod_e dU_e,
+$$
+
+where $dU$ is normalized Haar measure. Compactness of $G$ makes every finite-volume integral well-defined.
+
+For transfer-positivity arguments one may equivalently use the heat-kernel plaquette weight
+
+$$
+K_t(g)=\sum_{\lambda\in\widehat G}d_\lambda e^{-tC_2(\lambda)}\chi_\lambda(g),
+$$
+
+whose character coefficients are strictly positive and obey
+
+$$
+K_t*K_s=K_{t+s}.
+$$
+
+For any finite collection $g_i\in G$ and coefficients $c_i$,
+
+$$
+\sum_{i,j}\bar c_ic_jK_t(g_i^{-1}g_j)
+=
+\sum_\lambda d_\lambda e^{-tC_2(\lambda)}
+\left\|\sum_i c_i\pi_\lambda(g_i)\right\|_{HS}^2
+\ge0.
+$$
+
+Thus $K_t$ is of positive type for every $t>0$. This is the algebraic core of the positive transfer kernel.
+
+# 3. Hamiltonian regulator and Gauss law
+
+On a spatial lattice, the link Hilbert space is
+
+$$
+\mathcal H_e=L^2(G,dU),
+$$
+
+and
+
+$$
+\mathcal H_\Lambda=\bigotimes_{e\in E(\Lambda)}L^2(G).
+$$
+
+Left and right regular actions implement local color rotations. The gauge-invariant physical space is
+
+$$
+\mathcal H_\Lambda^{\mathrm{phys}}
+=
+\{\psi: G_x\psi=\psi\ \forall x\}.
+$$
+
+A Kogut–Susskind-type Hamiltonian is
+
+$$
+H_{a,L}
+=
+{\frac{g_0(a)^2}{2a}}\sum_e(-\Delta_G)_e
++
+{\frac{1}{2g_0(a)^2a}}\sum_p
+\left(2d_R-\chi_R(U_p)-\overline{\chi_R(U_p)}\right).
+$$
+
+Both terms are gauge invariant. The electric operator is positive. The magnetic bracket is nonnegative because $|\chi_R(U)|\le d_R$.
+
+# 4. Peter–Weyl finite verification hierarchy for SU(3)
+
+The Peter–Weyl theorem gives
+
+$$
+L^2(SU(3))
+=
+\widehat\bigoplus_{p,q\ge0}
+V_{p,q}\otimes V_{p,q}^*.
+$$
+
+The irreducible representation $(p,q)$ has
+
+$$
+d_{p,q}={\frac{(p+1)(q+1)(p+q+2)}{2}}
+$$
+
+and quadratic Casimir

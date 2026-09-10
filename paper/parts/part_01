@@ -1,0 +1,190 @@
+$$
+C_2(p,q)={\frac{p^2+q^2+pq+3p+3q}{3}}.
+$$
+
+Hence
+
+$$
+C_F=C_2(1,0)=\frac43,
+\qquad
+C_A=C_2(1,1)=3.
+$$
+
+Define the finite Peter–Weyl truncation
+
+$$
+\mathcal H_K=
+\bigoplus_{p+q\le K}V_{p,q}\otimes V_{p,q}^*.
+$$
+
+Then $P_K\to I$ strongly because the algebraic Peter–Weyl sum is dense. The executable dimensions are
+
+$$
+1,19,155,805,3136,9996,27468,67320,150645,\ldots
+$$
+
+for $K=0,1,\ldots,8$.
+
+Multiplication by a fundamental matrix coefficient obeys the exact tensor rule
+
+$$
+(p,q)\otimes(1,0)
+=
+(p+1,q)\oplus(p-1,q+1)\oplus(p,q-1),
+$$
+
+with terms of negative Dynkin label omitted. Therefore, on every finite algebraic Peter–Weyl core vector, $P_KUP_K$ agrees with $U$ for all sufficiently large $K$. This gives a finite-matrix verification route to the genuine $L^2(SU(3))$ link regulator.
+
+# 5. UCD native refinement family
+
+The UCD spatial refinement family is
+
+$$
+\Gamma_{r,s}
+=
+\mathbb Z_{3\,2^{r+s}}
+\times
+\mathbb Z_{2\,2^{r+s}}
+\times
+\mathbb Z_{2\,2^{r+s}},
+$$
+
+with
+
+$$
+a_r=L_*2^{-r}.
+$$
+
+The parameter $r$ removes the short-distance regulator; $s$ supplies independent thermodynamic enlargement. A fixed physical block of side $L_B$ contains
+
+$$
+n_r={\frac{L_B}{a_r}},
+\qquad
+n_ra_r=L_B.
+$$
+
+The executable refinement ledger verifies this identity exactly in dyadic arithmetic for the tested range.
+
+The finite UCD carrier
+
+$$
+\mathcal H_{504}=V_7\otimes\mathbb C[\mathbb Z_3]\otimes\mathbb C[\operatorname{Dic}_6]
+$$
+
+has a separately proved ring translation
+
+$$
+\Delta_{504}=2\kappa e^{-1/72}.
+$$
+
+Its exact Schur inheritance identity
+
+$$
+H_{\mathrm{eff}}(z)
+=
+H_{cc}-H_{c\ell}(H_{\ell\ell}-zI)^{-1}H_{\ell c}
+$$
+
+supplies the finite-registry model for information-preserving elimination. This finite H504 gap is not inserted as the continuum Yang–Mills mass; it supplies algebraic Schur structure and a finite-registry sector.
+
+# 6. Local Yang–Mills continuum asymptotics
+
+For a smooth connection, a small plaquette satisfies
+
+$$
+U_p
+=
+\exp\big(a^2F_{\mu\nu}+O(a^3)\big).
+$$
+
+After taking the real trace, the linear anti-Hermitian term cancels and
+
+$$
+\operatorname{ReTr}(I-U_p)
+=
+{\frac{a^4}{2}}\operatorname{Tr}(F_{\mu\nu}^\dagger F_{\mu\nu})+O(a^6).
+$$
+
+The executable constant-color test uses
+
+$$
+U_p=\exp(ia^2X)
+$$
+
+and verifies that the scaled density tends to $\frac12\operatorname{Tr}(X^2)$ with the expected $O(a^4)$ remainder in that commuting test.
+
+# 7. Independent finite quantum-link workbench
+
+The finite UCD $SU(3)$ workbench uses
+
+$$
+\mathcal H_{\mathrm{link}}=\Lambda^3\mathbb C^6,
+\qquad
+\dim\mathcal H_{\mathrm{link}}=20,
+$$
+
+with
+
+$$
+L^a=\sum_{ij}t^a_{ij}c_{L,i}^\dagger c_{L,j},
+\quad
+R^a=\sum_{ij}t^a_{ij}c_{R,i}^\dagger c_{R,j},
+\quad
+U_{ij}=c_{L,i}^\dagger c_{R,j}.
+$$
+
+The machine verifies left/right $SU(3)$ covariance, $[L^a,R^b]=0$, and
+
+$$
+\sum_at^at^a={\frac{4}{3}}I_3
+$$
+
+to numerical roundoff. Exact Gauss reduction of one plaquette gives an 18-dimensional gauge-singlet sector.
+
+The finite interacting diagnostic Hamiltonian is
+
+$$
+H_B(g,\lambda;L_B)
+=
+{\frac{g^2}{4L_B}}Q_E
+-
+{\frac{1}{2g^2L_B}}(B_p+B_p^\dagger)
+-
+{\frac{\lambda}{L_B}}D.
+$$
+
+This block is used to test Schur, spectral-parent, transfer-matrix, and contraction machinery. The continuum proof regulator remains the compact-group $L^2(G)$ system of Sections 2–4.
+
+# 8. Exact Feshbach–Schur theorem
+
+Let a self-adjoint operator be decomposed by complementary projections $P,Q$:
+
+$$
+H=
+\begin{pmatrix}
+A&B\\
+B^\dagger&D
+\end{pmatrix}.
+$$
+
+If $D-E$ is invertible, define
+
+$$
+F_E(H)=A-E-B(D-E)^{-1}B^\dagger.
+$$
+
+Then
+
+$$
+0\in\operatorname{Spec}F_E(H)
+\Longleftrightarrow
+E\in\operatorname{Spec}H
+$$
+
+away from $\operatorname{Spec}D$. Moreover, if
+
+$$
+D-E\ge\delta Q,
+$$
+
+then

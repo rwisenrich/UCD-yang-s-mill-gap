@@ -1,0 +1,29 @@
+{\frac{(A\eta_0/\delta_*)^2}{1-(A\eta_0/\delta_*)^2}}.
+}
+$$
+
+This converts the infrared part of the mass-gap problem into measured/derived block constants. The continuum proof then rests on an equally explicit ultraviolet-to-block bridge and continuum Schwinger convergence estimates. Once those bridge lemmas are discharged, the OS and spectral-transfer sections give the required theory on $\mathbb R^4$ and
+
+$$
+\boxed{
+\operatorname{Spec}(H)\cap(0,\Delta)=\varnothing,
+\qquad \Delta>0.
+}
+$$
+
+# References
+
+1. A. Jaffe and E. Witten, *Quantum Yang–Mills Theory*, in *The Millennium Prize Problems*, Clay Mathematics Institute / American Mathematical Society.
+2. K. Osterwalder and R. Schrader, *Axioms for Euclidean Green's Functions I*, Communications in Mathematical Physics 31 (1973).
+3. K. Osterwalder and R. Schrader, *Axioms for Euclidean Green's Functions II*, Communications in Mathematical Physics 42 (1975).
+4. K. Osterwalder and E. Seiler, *Gauge Field Theories on a Lattice*, Annals of Physics 110 (1978), 440–471.
+5. T. Balaban, *Renormalization Group Approach to Lattice Gauge Field Theories I: Generation of Effective Actions in a Small Field Approximation and a Coupling Constant Renormalization in Four Dimensions*, Communications in Mathematical Physics 109 (1987), 249–301.
+6. T. Balaban, *Renormalization Group Approach to Lattice Gauge Field Theories II: Cluster Expansions*, Communications in Mathematical Physics 116 (1988), 1–22.
+7. T. Balaban, *Convergent Renormalization Expansions for Lattice Gauge Theories*, Communications in Mathematical Physics 119 (1988), 243–285.
+8. T. Balaban, *Large Field Renormalization I: The Basic Step of the R Operation*, Communications in Mathematical Physics 122 (1989), 175–202.
+9. T. Balaban, *Large Field Renormalization II: Localization, Exponentiation, and Bounds for the R Operation*, Communications in Mathematical Physics 122 (1989), 355–392.
+10. D. A. Yarotsky, *Ground States in Relatively Bounded Quantum Perturbations of Classical Lattice Systems*, Communications in Mathematical Physics 261 (2006), 799–819.
+11. M. B. Hastings and T. Koma, *Spectral Gap and Exponential Decay of Correlations*, Communications in Mathematical Physics 265 (2006), 781–804.
+12. Y. Guo, Z. Li, G. Yang, and G. Zhu, *Bootstrapping SU(3) Lattice Yang–Mills Theory*, JHEP 12 (2025) 033; arXiv:2502.14421.
+13. R. F. Streater and A. S. Wightman, *PCT, Spin and Statistics, and All That*, Princeton University Press.
+14. R. Haag, *Local Quantum Physics*, Springer.

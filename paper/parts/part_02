@@ -1,0 +1,189 @@
+
+$$
+\boxed{
+\|B(D-E)^{-1}B^\dagger\|
+\le {\frac{\|B\|^2}{\delta}}.
+}
+$$
+
+The correction is exactly quadratic in the retained–eliminated coupling $B$. There is no first-order Schur self-energy term.
+
+The finite $SU(3)$ workbench verifies the four lowest full eigenvalues against their energy-dependent Schur operators with maximum residual $1.33\times10^{-14}$.
+
+# 9. Quadratic Schur contraction theorem
+
+Consider a sequence of exact block eliminations. At scale $k$, absorb the complete $PHP$ term into the next retained Hamiltonian and write the remaining retained–eliminated coupling as a sum of local interface operators whose local interaction norm is at most $\eta_k$.
+
+Assume:
+
+1. the eliminated sector in the spectral window is separated by
+   $$Q(H_k-E)Q\ge\delta_*Q,$$
+   with $\delta_*>0$ independent of $k$;
+2. a retained local cell participates in at most $A$ ordered two-step paths through one eliminated cell;
+3. the next-scale residual interaction norm is defined by summing the norms of local Schur-generated paths touching a fixed retained cell.
+
+Then each two-step term satisfies
+
+$$
+\|B_Y(Q(H_k-E)Q)^{-1}B_Z^\dagger\|
+\le {\frac{\eta_k^2}{\delta_*}},
+$$
+
+and at most $A$ such ordered paths contribute. Therefore
+
+$$
+\boxed{
+\eta_{k+1}\le {\frac{A}{\delta_*}}\eta_k^2.
+}
+$$
+
+Set
+
+$$
+x_k={\frac{A\eta_k}{\delta_*}}.
+$$
+
+Then
+
+$$
+x_{k+1}\le x_k^2.
+$$
+
+If $0<x_0<1$,
+
+$$
+\boxed{x_k\le x_0^{2^k}}
+$$
+
+and therefore
+
+$$
+\eta_k
+\le
+{\frac{\delta_*}{A}}x_0^{2^k}.
+$$
+
+The $k$th self-energy satisfies
+
+$$
+\epsilon_k\le{\frac{\eta_k^2}{\delta_*}}
+\le
+{\frac{\delta_*}{A^2}}x_0^{2^{k+1}}.
+$$
+
+Since $2^{k+1}\ge2(k+1)$,
+
+$$
+\sum_{k=0}^\infty x_0^{2^{k+1}}
+\le
+\sum_{j=1}^\infty x_0^{2j}
+=
+{\frac{x_0^2}{1-x_0^2}}.
+$$
+
+Hence
+
+$$
+\boxed{
+\sum_{k\ge0}\epsilon_k
+\le
+{\frac{\delta_*}{A^2}}
+{\frac{x_0^2}{1-x_0^2}}.
+}
+$$
+
+By Weyl's inequality, a perturbation of operator norm $\epsilon$ moves each of the two lowest spectral edges by at most $\epsilon$, so the gap decreases by at most $2\epsilon$. Thus an initial gap $\Delta_0$ satisfies
+
+$$
+\boxed{
+\Delta_\infty
+\ge
+\Delta_0-
+{\frac{2\delta_*}{A^2}}
+{\frac{x_0^2}{1-x_0^2}}.
+}
+$$
+
+This is a regulator-step-independent sufficient criterion for gap survival through an exact Schur tower.
+
+# 10. Four-dimensional local path constant
+
+On a 4-dimensional hypercubic lattice, a link belongs to
+
+$$
+2(d-1)=6
+$$
+
+plaquettes. Fix one plaquette. Each of its four boundary links is shared with five other plaquettes. Distinct edge-sharing neighboring plaquettes therefore number at most
+
+$$
+D=4(6-1)=20.
+$$
+
+An ordered Schur path retained $\to$ eliminated $\to$ retained is bounded by
+
+$$
+\boxed{A\le D^2=400.}
+$$
+
+This is deliberately a path-count majorant; additional cancellations can only reduce it.
+
+For the finite quantum-link stress point $g=8$, $\lambda=0.05$, $L_B=1$, the machine obtains
+
+$$
+\Delta_0=0.09998915391358655,
+$$
+
+$$
+\eta_0=0.0703125,
+$$
+
+$$
+\delta_0=170.74167028648398.
+$$
+
+Taking the conservative invariant target
+
+$$
+\delta_*=\frac12\delta_0=85.37083514324199
+$$
+
+and $A=400$ gives
+
+$$
+x_0=0.32944506110089744<1,
+$$
+
+$$
+\sum_k\epsilon_k\le6.496071390629655\times10^{-5},
+$$
+
+and
+
+$$
+\boxed{
+\Delta_\infty\ge0.09985923248577395>0.
+}
+$$
+
+The corresponding separation floor is
+
+$$
+170.74154036505618>\delta_*;
+$$
+
+hence the assumed half-separation is self-consistent for this abstract Schur tower.
+
+# 11. Strong-coupling gap basin for the standard compact-group Hamiltonian
+
+For the genuine $L^2(G)$ Hamiltonian, split
+
+$$
+H=H_E+V_B.
+$$
+
+The unperturbed electric operator is a sum of independent positive group Laplacians. By Peter–Weyl,
+
+$$
+-\Delta_G|_{V_\lambda\otimes V_\lambda^*}=C_2(\lambda).
+$$

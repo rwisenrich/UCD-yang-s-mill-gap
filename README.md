@@ -1,15 +1,29 @@
-# UCD Yang-Mills Existence and Mass-Gap Construction
+# UCD Yang-Mills Jaffe-Witten Submission v4.0
 
-This repository is the public verification repository for Richard Wise's UCD Yang-Mills/Jaffe-Witten construction.
+This repository is the public verification repository for Richard Wise's UCD Yang-Mills existence and mass-gap construction.
 
-The project is organized directly against the Jaffe-Witten Millennium problem specification:
+The manuscript is organized directly against the Jaffe-Witten Millennium specification as four linked stages:
 
 `A -> B -> C -> D`
 
-- A: finite gauge regulator plus regulator- and volume-uniform positive spectral threshold
-- B: construction of the nontrivial Euclidean continuum theory on R^4
-- C: Osterwalder-Schrader reconstruction to the physical Hilbert-space/Wightman theory
-- D: transfer of the positive spectral threshold to the continuum Hamiltonian
+- **A**: compact-group lattice regulator, gauge-invariant physical sector, reflection-positive transfer structure, and a regulator/volume-uniform spectral-gap theorem.
+- **B**: thermodynamic and continuum convergence of gauge-invariant Schwinger functions to a nontrivial Euclidean theory on R^4.
+- **C**: Osterwalder-Schrader reconstruction to the physical Hilbert-space/Wightman theory.
+- **D**: transfer of the uniform positive spectral threshold to the reconstructed Hamiltonian.
+
+## Proof regulator
+
+The proof regulator is the genuine compact-group lattice gauge Hilbert space
+
+`H_link = L^2(G)`
+
+with Wilson/heat-kernel transfer structure. The finite 20-dimensional SU(3) quantum-link model is retained as an independent algebraic/computational workbench, not substituted for `L^2(SU(3))`.
+
+The finite-to-continuum bridge is explicit through Peter-Weyl truncations
+
+`H_K = direct_sum_{p+q <= K} V_(p,q) tensor V_(p,q)^*`,
+
+whose dimensions increase to the dense Peter-Weyl subspace of `L^2(SU(3))`.
 
 ## Reproduce
 
@@ -19,20 +33,29 @@ python run_all.py
 python -m pytest -q
 ```
 
-## Current release
+The current regression suite returns **10/10 tests** and the independent finite-block verifier returns **11/11 checks**.
 
-`UCD_YM_JAFFE_WITTEN_SUBMISSION_v3_0`
+## Main manuscript and proof graph
 
-Key artifacts:
+- `paper/parts/` — canonical manuscript source in ordered parts.
+- `docs/REFEREE_AUDIT.md` — referee-facing dependency audit.
+- `results/jaffe_witten_obligation_ledger_v4.csv` — line-item Jaffe-Witten obligation ledger.
+- `results/PROOF_GRAPH_v4.json` — machine-readable theorem dependency graph.
+- `src/schur_rg_contraction.py` — exact Schur quadratic-contraction theorem and certificates.
+- `src/peter_weyl_su3.py` — SU(3) Peter-Weyl truncation bridge.
+- `src/heat_kernel_transfer.py` — positive heat-kernel transfer/semigroup checks.
+- `src/native_su3_block.py` — finite SU(3) algebraic workbench.
+- `.github/workflows/verify.yml` — automated reproducibility checks.
+- `.github/workflows/build-release.yml` — builds PDF/DOCX, reruns checks, packages and commits release outputs.
 
-- `paper/UCD_YM_Jaffe_Witten_Submission.md`
-- `paper/UCD_YM_Jaffe_Witten_Submission.pdf`
-- `paper/UCD_YM_Jaffe_Witten_Submission.docx`
-- `src/native_su3_block.py`
-- `src/jw_verifier.py`
-- `src/independent_verifier.py`
-- `results/jaffe_witten_obligation_ledger.csv`
-- `results/MASTER_VERDICT.json`
-- `.github/workflows/verify.yml`
+## Central theorem chain
 
-The full versioned release archive is stored under `release/` and contains the complete executable package, paper, results, figures, provenance, tests, and SHA-256 manifest.
+For finite regulator Hamiltonians `H_(r,s)`, the target is
+
+`inf_(r,s) gap(H_(r,s)) = m_* > 0`.
+
+After convergence of the reflection-positive Schwinger family and OS reconstruction, the spectral-transfer theorem yields
+
+`Spec(H) intersect (0,m_*) = empty`.
+
+The exact dependency status is recorded in `results/jaffe_witten_obligation_ledger_v4.csv`; no finite-regulator calculation is silently promoted into a continuum theorem.

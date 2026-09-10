@@ -1,0 +1,190 @@
+For compact simple $G$, every nontrivial irreducible representation has
+
+$$
+C_2(\lambda)>0.
+$$
+
+Thus the product electric vacuum is unique and has a local spectral gap. The magnetic plaquette term is a bounded finite-range perturbation because $|\chi_R(U)|\le d_R$. Standard relatively-bounded perturbation theorems for gapped lattice systems therefore give a volume-independent gapped phase whenever the local magnetic interaction is sufficiently small relative to the electric gap. For $SU(3)$ the dimensionless local scale ratio behaves as
+
+$$
+{\frac{\|V_p\|}{\Delta_E}}
+\lesssim
+{\frac{9}{g^4}},
+$$
+
+so the large-$g$ region lies in a rigorous gapped strong-coupling basin.
+
+The purpose of Sections 8–10 is to give a UCD-native exact Schur mechanism for maintaining such a basin under subsequent coarse elimination, with explicit summable error control.
+
+# 12. Ultraviolet asymptotic freedom and renormalized trajectory
+
+For pure $SU(N)$,
+
+$$
+\mu{\frac{dg}{d\mu}}=-b_0g^3+O(g^5),
+\qquad
+b_0={\frac{11N}{48\pi^2}}>0.
+$$
+
+For $SU(3)$,
+
+$$
+b_0={\frac{11}{16\pi^2}}=0.0696583137541\ldots.
+$$
+
+At one loop, fixing a block coupling $g_B$ at physical scale $L_B$ gives
+
+$$
+{\frac{1}{g_0(a)^2}}
+=
+{\frac{1}{g_B^2}}
++2b_0\log{\frac{L_B}{a}}.
+$$
+
+Thus
+
+$$
+g_0(a)\to0
+\qquad(a\to0).
+$$
+
+The executable trajectory verifies the algebraic round-trip relation to machine precision. Balaban's four-dimensional small-field renormalization construction provides rigorous localized effective actions and coupling-constant renormalization in the weak-coupling ultraviolet regime. The complete Jaffe–Witten bridge is the all-field continuation from that ultraviolet regime into a fixed-physical-scale gapped basin with constants uniform in $a$ and $L$.
+
+We isolate that step as the following lemma.
+
+**Bridge Lemma A (UV-to-gap-basin).** There exist $L_B>0$, $a_0>0$, and regulator couplings $g_0(a)$ for $0<a<a_0$ such that the exact gauge-invariant Wilson/heat-kernel RG map to scale $L_B$ produces an effective Hamiltonian satisfying the hypotheses of Theorem 9 with constants $A,\delta_*,\eta_0,\Delta_0$ independent of $a$ and thermodynamic volume, with
+
+$$
+{\frac{A\eta_0}{\delta_*}}<1
+$$
+
+and
+
+$$
+\Delta_0>
+{\frac{2\delta_*}{A^2}}
+{\frac{(A\eta_0/\delta_*)^2}{1-(A\eta_0/\delta_*)^2}}.
+$$
+
+Once Bridge Lemma A is established, Theorem 9 produces a regulator- and volume-uniform positive spectral threshold $m_*>0$.
+
+# 13. A: regulator-uniform mass gap
+
+Let $P_{0,a,L}$ be the finite-volume vacuum projection. Under Bridge Lemma A and the exact Schur contraction theorem,
+
+$$
+H_{a,L}-E_{0,a,L}
+\ge
+m_*(I-P_{0,a,L})
+$$
+
+with one $m_*>0$ independent of sufficiently small $a$ and sufficiently large $L$. Therefore
+
+$$
+\boxed{
+\inf_{a<a_0,L>L_0}
+\left(E_1(a,L)-E_0(a,L)\right)
+\ge m_*>0.
+}
+$$
+
+This is precisely the form of uniform finite-volume gap singled out in the Jaffe–Witten discussion as the spectral input needed for the thermodynamic construction.
+
+# 14. B: infinite-volume local state
+
+For a bounded gauge-invariant observable $A$ supported in a fixed compact physical region $K$, define
+
+$$
+\omega_{a,L}(A)
+=
+\langle\Omega_{a,L},A\Omega_{a,L}\rangle.
+$$
+
+A volume-uniform gap and finite-range locality give exponential decay of connected correlations in the Hamiltonian lattice theory. The required thermodynamic theorem is:
+
+**Bridge Lemma B1 (thermodynamic uniqueness and convergence).** For each sufficiently small $a$, the local expectations $\omega_{a,L}(A)$ converge as $L\to\infty$, independently of boundary conditions compatible with the vacuum phase, and the limit obeys a uniform exponential clustering estimate
+
+$$
+|\omega_a(AB)-\omega_a(A)\omega_a(B)|
+\le C_{A,B}e^{-m_*d(A,B)}.
+$$
+
+The quasi-local algebra is the norm closure
+
+$$
+\mathcal A_a
+=
+\overline{\bigcup_{K\Subset\mathbb R^3}\mathcal A_a(K)}.
+$$
+
+The thermodynamic state $\omega_a$ is positive and normalized by construction.
+
+# 15. B: continuum Schwinger family
+
+Let $\mathcal O_i^{(a)}(f_i)$ be renormalized gauge-invariant local composite observables smeared with test functions. Define
+
+$$
+S_n^{(a)}(f_1,\ldots,f_n)
+=
+\omega_a\left(
+\mathcal O_1^{(a)}(f_1)\cdots\mathcal O_n^{(a)}(f_n)
+\right).
+$$
+
+The continuum construction requires scale-dependent field/operator renormalizations $Z_{\mathcal O}(a)$ and counterterms fixed by gauge-invariant renormalization conditions.
+
+**Bridge Lemma B2 (continuum convergence).** For every finite collection of gauge-invariant local test observables, the renormalized distributions converge in $\mathcal S'(\mathbb R^{4n})$:
+
+$$
+S_n=\lim_{a\to0}S_n^{(a)}.
+$$
+
+The bounds are uniform on bounded sets of Schwartz test functions and compatible with the exponential clustering constant $m_*$.
+
+**Bridge Lemma B3 (nontriviality).** At least one connected gauge-invariant continuum distribution is nonzero, equivalently
+
+$$
+S_n^T\not\equiv0
+$$
+
+for some $n\ge4$, or another equivalent non-Gaussian observable criterion holds.
+
+The finite workbench already contains nonzero connected Wilson spectral weight; B3 is its continuum persistence statement.
+
+# 16. Reflection positivity and passage to the limit
+
+At finite regulator the Wilson approximation is reflection positive; the heat-kernel formulation exhibits positivity directly through nonnegative character coefficients.
+
+Let $F$ be a polynomial in positive-time gauge-invariant smeared observables. Then
+
+$$
+\langle\Theta F,F\rangle_{a,L}\ge0.
+$$
+
+If Bridge Lemma B2 gives convergence of every correlator entering this finite quadratic form, then
+
+$$
+\langle\Theta F,F\rangle
+=
+\lim_{a\to0}\lim_{L\to\infty}
+\langle\Theta F,F\rangle_{a,L}
+\ge0.
+$$
+
+Therefore reflection positivity is closed under the continuum limit once the Schwinger distributions converge.
+
+The same argument passes permutation symmetry. Translation invariance passes from the translation-invariant regulators. Full Euclidean rotation invariance requires restoration from the hypercubic subgroup:
+
+**Bridge Lemma C1 (Euclidean restoration).** The limiting Schwinger distributions are invariant under $E(4)$ rather than only the hypercubic subgroup, with all Lorentz-breaking irrelevant operators vanishing under the renormalized trajectory.
+
+# 17. C: Osterwalder–Schrader reconstruction
+
+Assume B1–B3 and C1 together with the standard OS regularity bounds. Then the limiting Schwinger family satisfies the reconstruction hypotheses. The OS quotient is formed from positive-time test polynomials by
+
+$$
+(F,G)_{OS}=\langle\Theta F,G\rangle,
+$$
+
+modulo null vectors and completed to a Hilbert space $\mathcal H$. Euclidean time translations generate a positive contraction semigroup
+
+$$

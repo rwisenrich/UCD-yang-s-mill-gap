@@ -1,0 +1,190 @@
+T(t)=e^{-tH},
+\qquad H\ge0.
+$$
+
+Spatial translations and rotations continue to unitary operators, analytic continuation produces the Poincaré representation, and the reconstructed local observable fields satisfy the corresponding Wightman-strength axioms.
+
+Thus
+
+$$
+\boxed{
+\{S_n\}_{n\ge0}
+\xrightarrow{OS}
+(\mathcal H,\Omega,H,P_\mu,\mathcal A).
+}
+$$
+
+# 18. D: spectral-gap transfer
+
+For a local gauge-invariant observable $A$ with $\langle\Omega,A\Omega\rangle=0$,
+
+$$
+C_A(t)
+=
+\langle\Omega,Ae^{-tH}A\Omega\rangle
+=
+\int_{[0,\infty)}e^{-Et}\,d\rho_A(E),
+$$
+
+where $\rho_A$ is a positive spectral measure.
+
+If the uniform regulator gap gives
+
+$$
+|C_A^{(a,L)}(t)|\le C_Ae^{-m_*t}
+$$
+
+with $C_A$ stable under the limits, then
+
+$$
+|C_A(t)|\le C_Ae^{-m_*t}.
+$$
+
+Suppose $\rho_A([E_1,E_2])>0$ for some
+
+$$
+0<E_1\le E_2<m_*.
+$$
+
+Then positivity implies
+
+$$
+C_A(t)
+\ge e^{-E_2t}\rho_A([E_1,E_2]),
+$$
+
+which cannot be bounded by $C_Ae^{-m_*t}$ as $t\to\infty$. Hence
+
+$$
+\rho_A((0,m_*))=0.
+$$
+
+If local gauge-invariant vectors $A\Omega$ are dense in $\Omega^\perp$, then the bounded spectral projection $1_{(0,m_*)}(H)$ vanishes on a dense set and therefore vanishes identically. Thus
+
+$$
+\boxed{
+\operatorname{Spec}(H)
+\subset
+\{0\}\cup[m_*,\infty).
+}
+$$
+
+# 19. Finite upper edge and nontrivial spectral support
+
+The Jaffe–Witten definition also requires the supremal gap parameter to be finite. It is enough to construct one non-vacuum local state of finite energy. For a compactly supported gauge-invariant local operator $A$ in the Hamiltonian form domain,
+
+$$
+0<\|(I-P_0)A\Omega\|<\infty,
+$$
+
+and
+
+$$
+\frac{\langle A\Omega,HA\Omega\rangle}
+{\|(I-P_0)A\Omega\|^2}<\infty
+$$
+
+places spectrum at finite positive energy. The continuum nontriviality lemma B3 supplies the required non-vacuum local sector.
+
+# 20. Arbitrary compact simple gauge group
+
+The argument above is not special to $SU(3)$ at the structural level. For compact simple $G$:
+
+1. Haar measure exists and is finite.
+2. Peter–Weyl gives
+   $$
+   L^2(G)=\widehat\bigoplus_{\lambda\in\widehat G}V_\lambda\otimes V_\lambda^*.
+   $$
+3. The Laplace–Casimir eigenvalue obeys $C_2(\lambda)>0$ for every nontrivial irreducible representation.
+4. Heat-kernel character coefficients are positive.
+5. Wilson/character plaquette observables are local and gauge invariant.
+6. The Schur theorem is representation independent.
+7. The OS reconstruction and spectral-transfer arguments are group independent.
+
+The group-dependent part is therefore concentrated in the uniform RG estimates of Bridge Lemmas A and B2. A complete “for any compact simple $G$” proof supplies those estimates for each compact simple group, with no requirement that the numerical constant $m_*$ be universal across different groups.
+
+# 21. Positivity-bootstrap cross-check lane
+
+Hermitian positivity, reflection positivity, and Schwinger–Dyson loop equations can be imposed simultaneously on finite sets of Wilson loops. The 2025 $SU(3)$ lattice bootstrap literature demonstrates rigorous expectation-value bounds from these constraints in 2D, 3D, and 4D. In this package that machinery is assigned as an independent finite-regulator cross-check lane:
+
+$$
+\text{Wilson loop algebra}
++\text{reflection positivity}
++\text{SD equations}
+\Longrightarrow
+\text{certified convex feasible region}.
+$$
+
+The natural next use is to bound the renormalized block parameters $(\eta_k,\delta_k,\Delta_k)$ entering Bridge Lemma A rather than merely bound the plaquette expectation.
+
+# 22. Machine-verifiable results
+
+The package runs the following independent checks:
+
+- $SU(3)$ left/right covariance and fundamental Casimir;
+- exact 18-dimensional finite Gauss-sector construction;
+- positive interacting finite-workbench block gap;
+- low-spectrum Feshbach–Schur isospectrality;
+- exact spectral-parent inequality;
+- positive self-adjoint transfer matrix and transfer-gap identity;
+- positive-kernel preservation under coarse pullback;
+- nonzero gauge-invariant finite spectral weight and exponential spectral bound;
+- Wilson small-plaquette continuum scaling;
+- one-loop asymptotically-free trajectory arithmetic;
+- exact $SU(3)$ Peter–Weyl dimensions and Casimir values;
+- fundamental tensor-product adjacency graph;
+- heat-kernel positive coefficients and convolution semigroup coefficients;
+- 4D hypercubic overlap/path-count constants;
+- quadratic Schur contraction and infinite-step gap-floor certificate.
+
+The current automated test suite returns **10/10 tests passed**. The prior independent finite-block verifier returns **11/11 checks passed**.
+
+# 23. Jaffe–Witten proof ledger
+
+The machine-readable file `results/jaffe_witten_obligation_ledger_v4.csv` maps every theorem to its dependencies. The shortest remaining $SU(3)$ proof chain is:
+
+$$
+\boxed{
+\begin{aligned}
+&\text{all-field UV RG control}\\
+&\Downarrow\\
+&\text{entry into the exact Schur gap basin}\\
+&\Downarrow\\
+&\inf_{a,L}\Delta(a,L)=m_*>0\\
+&\Downarrow\\
+&\text{thermodynamic + continuum Schwinger convergence}\\
+&\Downarrow\\
+&\text{Euclidean symmetry + OS axioms}\\
+&\Downarrow\\
+&\text{OS reconstruction}\\
+&\Downarrow\\
+&\operatorname{Spec}(H)\subset\{0\}\cup[m_*,\infty).
+\end{aligned}}
+$$
+
+The ledger deliberately separates a theorem already proved in the package, a standard theorem invoked from the literature, and a bridge lemma that must be discharged by the UCD/Wilson construction. That separation is part of the proof object: no finite-matrix eigenvalue is silently relabeled as a continuum mass.
+
+# 24. Reproducibility
+
+Install and run:
+
+```bash
+python -m pip install -r requirements.txt
+python run_all.py
+python -m pytest -q
+```
+
+The GitHub Actions workflow runs the same verification on each push and pull request. Every release file is hashed in `MANIFEST.sha256`.
+
+# 25. Conclusion
+
+The Jaffe–Witten problem has been converted into an explicit finite dependency graph. The compact-group proof regulator, gauge symmetry, Gauss sector, local Yang–Mills continuum asymptotics, Peter–Weyl finite verification hierarchy, positive Euclidean transfer structure, exact Feshbach–Schur identity, and a quantitative quadratic Schur gap-stability theorem are all written in one common normalization.
+
+The new quantitative result is the exact summable Schur criterion
+
+$$
+\boxed{
+\Delta_\infty
+\ge
+\Delta_0-
+{\frac{2\delta_*}{A^2}}
