@@ -1,0 +1,10 @@
+id,source,role,status_in_chain
+EXT-01,Jaffe-Witten official problem statement,Exact problem specification,AUTHORITATIVE_SPECIFICATION
+EXT-02,Osterwalder-Seiler 1978,Lattice reflection positivity and strong-coupling cluster expansion,THEOREM_INPUT
+EXT-03,Osterwalder-Schrader 1973/1975,Euclidean reconstruction,THEOREM_INPUT
+EXT-04,Balaban 1987-1989,4D lattice gauge ultraviolet RG and large-field machinery,THEOREM_INPUT
+EXT-05,Magnen-Rivasseau-Seneor 1993,YM4 construction with infrared cutoff,COMPARISON_INPUT
+EXT-06,Shen-Zhu-Zhu arXiv:2204.12737,Explicit strong-coupling infinite-volume convergence functional inequalities exponential clustering,THEOREM_INPUT
+EXT-07,Yarotsky 2004/2006,Gapped local phase stability under perturbations,ALTERNATE_IR_INPUT
+EXT-08,Hastings-Koma 2006,Spectral gap implies exponential clustering for local systems,THEOREM_INPUT
+EXT-09,Guo-Li-Yang-Zhu 2025,SU3 positivity bootstrap from loop positivity and Schwinger-Dyson constraints,INDEPENDENT_BOUNDING_LANE
