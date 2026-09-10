@@ -19,6 +19,8 @@ rows=[
  {'id':'JW-08A','requirement':'Infinite-volume limits of gauge-invariant local expectations','formula':'omega_infty(A)=lim_s omega_rs(A)','status':'OPEN_CONVERGENCE_LEMMA','dependency':'uniform clustering/tightness in gauge-invariant local algebra'},
  {'id':'JW-08B','requirement':'Continuum Schwinger distributions exist','formula':'S_n=lim_r lim_s S_n^(r,s)','status':'OPEN_CONVERGENCE_LEMMA','dependency':'UV renormalization + composite-operator bounds'},
  {'id':'JW-08C','requirement':'Non-Gaussian/nontrivial continuum state','formula':'S_4^T not identically 0 (or equivalent)','status':'OPEN_PERSISTENCE_LEMMA','dependency':'nonzero connected gauge-invariant continuum correlator'},
+ {'id':'JW-08D','requirement':'Local quantum fields corresponding to gauge-invariant curvature polynomials and covariant derivatives','formula':'O_P^(a)=sum_Q Z_PQ(a) P_Q(U)/a^dim(P) -> O_P','status':'OPEN_COMPOSITE_OPERATOR_RENORMALIZATION','dependency':'operator mixing bounds + JW-08B'},
+ {'id':'JW-08E','requirement':'Short-distance asymptotic-freedom matching, stress tensor, and OPE structure','formula':'O_P(x)O_Q(0) ~ sum_R C_PQ^R(x,mu,g(mu)) O_R(0); partial^mu T_munu=0','status':'OPEN_SHORT_DISTANCE_STRUCTURE','dependency':'JW-06B + JW-08D + Ward identities'},
  {'id':'JW-09A','requirement':'Reflection positivity survives the limit','formula':'<Theta F F>=lim <Theta F F>_rs >=0','status':'PASS_LIMIT_LEMMA_IF_JW08B','dependency':'JW-03 + convergence'},
  {'id':'JW-09B','requirement':'Euclidean invariance restored','formula':'S_n(Rx_i+a)=S_n(x_i)','status':'OPEN_SYMMETRY_LIMIT_LEMMA','dependency':'rotational restoration / regulator universality'},
  {'id':'JW-09C','requirement':'Regularity, symmetry, clustering OS axioms','formula':'OS0-OS4/appropriate equivalent','status':'OPEN_AXIOM_BOUNDS','dependency':'JW-08 + JW-07D'},
@@ -33,9 +35,9 @@ with open(RES/'jaffe_witten_obligation_ledger_v4.csv','w',newline='') as f:
 closed=[r['id'] for r in rows if r['status'].startswith('PASS')]
 openids=[r['id'] for r in rows if r['status'].startswith('OPEN')]
 dep=[r['id'] for r in rows if r['status'].startswith('DEPENDENT')]
-critical=['JW-06B','JW-07C','JW-08A','JW-08B','JW-08C','JW-09B','JW-09C','JW-13']
+critical=['JW-06B','JW-07C','JW-08A','JW-08B','JW-08C','JW-08D','JW-08E','JW-09B','JW-09C','JW-13']
 out={'release':'v4.0','closed_or_conditional_theorems':closed,'open_primary_lemmas':openids,'dependent_conclusions':dep,'critical_path':critical,
-     'shortest_SU3_chain':['JW-06B','JW-07C','JW-07D','JW-08A','JW-08B','JW-08C','JW-09B','JW-09C','JW-10','JW-11','JW-12A','JW-12B'],
+     'shortest_SU3_chain':['JW-06B','JW-07C','JW-07D','JW-08A','JW-08B','JW-08C','JW-08D','JW-08E','JW-09B','JW-09C','JW-10','JW-11','JW-12A','JW-12B'],
      'definition_of_completion':'All primary lemmas on the critical path are promoted to proved theorems with constants independent of regulator and volume; then JW-10/11/12 follow.'}
 with open(RES/'PROOF_GRAPH_v4.json','w') as f:json.dump(out,f,indent=2)
 print(json.dumps(out,indent=2))
