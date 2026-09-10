@@ -1,0 +1,9 @@
+{
+  "dimension": 4,
+  "plaquette_boundary_links": 4,
+  "plaquettes_per_link": 6,
+  "other_plaquettes_per_link": 5,
+  "edge_overlap_degree": 20,
+  "ordered_two_step_path_majorant_A": 400,
+  "derivation": "D=4*(2*(d-1)-1)=20; A=D^2=400 bounds ordered two-step Schur paths per retained plaquette."
+}

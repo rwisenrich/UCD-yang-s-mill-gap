@@ -1,0 +1,11 @@
+gate,statement,test,pass
+N1,20D SU3 rishon link,left/right gauge covariance,True
+N2,SU3 Casimir,C_F=4/3,True
+N3,18D Gauss-law plaquette sector,16 endpoint singlets + 2 flux loops,True
+N4,fully interacting block,electric + Wilson plaquette + determinant,True
+N5,exact Schur isospectrality,low eigenvalues satisfy Schur equation,True
+N6,fixed-physical numeric threshold,Delta_B>3 equivalently gamma_r>3/n_r,True
+N6A,single-block spectral parent domination,H-E0 >= delta*(I-P0),True
+N6B,Schur correction rank,rank Sigma(E0) <= 2,True
+N7,raw projector hypothesis,native terms projector-valued,False
+N8,frustration-free hypothesis,common local ground space nonzero,False

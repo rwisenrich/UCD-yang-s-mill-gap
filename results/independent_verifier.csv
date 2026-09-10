@@ -1,0 +1,12 @@
+check,pass,value
+SU3 covariance,True,0.0
+SU3 fundamental Casimir,True,2.220446049250313e-16
+left-right commute,True,0.0
+positive interacting block gap,True,3.1452083635429524
+Schur low-spectrum residual,True,1.3322676295501878e-14
+spectral parent domination,True,7.458277425945368e-16
+positive transfer matrix,True,0.16448779751375747
+transfer gap identity,True,8.881784197001252e-16
+positive-kernel coarse pushforward,True,23.92207192647866
+nonzero gauge-invariant probe spectral weight,True,3.4417741154766692
+spectral exponential bound,True,-1.8175316632353265e-27

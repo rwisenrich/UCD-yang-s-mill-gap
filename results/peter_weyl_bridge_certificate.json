@@ -1,0 +1,23 @@
+{
+  "fundamental": {
+    "p": 1,
+    "q": 0,
+    "dimension": 3,
+    "C2": "4/3"
+  },
+  "antifundamental": {
+    "p": 0,
+    "q": 1,
+    "dimension": 3,
+    "C2": "4/3"
+  },
+  "adjoint": {
+    "p": 1,
+    "q": 1,
+    "dimension": 8,
+    "C2": "3"
+  },
+  "truncation_statement": "H_K = direct_sum_{p+q<=K} V_(p,q) tensor V_(p,q)^*. Peter-Weyl gives closure union_K H_K dense in L2(SU3), hence P_K -> I strongly.",
+  "electric_statement": "-Delta_SU3 is diagonal on each Peter-Weyl block with eigenvalue C2(p,q), so the first nonzero electric eigenvalue is C_F=4/3.",
+  "wilson_multiplication_statement": "Multiplication by a fundamental matrix coefficient maps irrep (p,q) into (p,q) tensor (1,0); projected finite matrices converge strongly on the algebraic Peter-Weyl core because every finite core vector is eventually interior to the cutoff."
+}

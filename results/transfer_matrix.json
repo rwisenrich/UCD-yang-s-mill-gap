@@ -1,0 +1,9 @@
+{
+  "transfer_min_eigenvalue": 0.16448779751375747,
+  "transfer_top_eigenvalue": 0.9999999999999997,
+  "transfer_second_eigenvalue": 0.6749267952699152,
+  "hamiltonian_gap": 3.145208363542948,
+  "transfer_reconstructed_gap": 3.145208363542947,
+  "gap_residual": 8.881784197001252e-16,
+  "positive_self_adjoint_transfer": true
+}

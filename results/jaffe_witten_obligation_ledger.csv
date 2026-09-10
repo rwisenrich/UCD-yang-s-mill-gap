@@ -1,0 +1,13 @@
+id,obligation,artifact,result
+JW-1,compact simple gauge group regulator,SU(3) native quantum-link/Wilson block; analytic G-parametric formulation,PASS
+JW-2,local gauge invariance and Gauss sector,native_su3_block.py,PASS
+JW-3,positive self-adjoint transfer operator / Euclidean positivity at regulator,transfer_matrix.json + standard Wilson reflection-positivity theorem,PASS
+JW-4,native refinement a->0 and volume->infinity indexing,refinement_identity.csv + Gamma_rs construction,PASS
+JW-5,Wilson local continuum F^2 asymptotics,wilson_continuum_scaling.csv,PASS
+JW-6,asymptotically-free renormalization trajectory,rg_trajectory.csv,PASS_AT_ONE_LOOP
+JW-7,nonperturbative regulator-uniform interacting spectral gap,v2 local block + spectral parent comparison target,OPEN_PROOF_OBLIGATION
+JW-8,existence/convergence of infinite-volume continuum Schwinger functions,projective/Schur construction schema,OPEN_PROOF_OBLIGATION
+JW-9,OS axioms for limiting Schwinger functions,reflection pushforward lemma; locality/symmetry schema,OPEN_PROOF_OBLIGATION
+JW-10,OS/Wightman reconstruction on R4,standard reconstruction theorem after JW-8/JW-9,DEPENDENT_ON_JW8_JW9
+JW-11,nontriviality of limiting theory,finite Wilson probe spectral weight; continuum persistence target,OPEN_PROOF_OBLIGATION
+JW-12,continuum mass gap Delta>0,spectral-transfer lemma after uniform exponential clustering,DEPENDENT_ON_JW7_JW8_JW9

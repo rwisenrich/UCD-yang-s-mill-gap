@@ -1,0 +1,10 @@
+{
+  "t": 0.17,
+  "s": 0.23,
+  "K": 8,
+  "all_character_coefficients_positive": true,
+  "max_character_semigroup_residual": 1.3877787807814457e-17,
+  "minimum_character_coefficient": 8.021915426770674e-06,
+  "general_positive_type_identity": "sum_ij c_i^* c_j K_t(g_i^-1 g_j) = sum_lambda d_lambda exp(-t C2(lambda)) ||sum_i c_i pi_lambda(g_i)||_HS^2 >= 0",
+  "convolution_semigroup": "Fourier coefficient of K_t * K_s is exp(-(t+s)C2(lambda)); hence K_t*K_s=K_(t+s)."
+}

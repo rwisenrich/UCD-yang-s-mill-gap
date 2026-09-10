@@ -1,0 +1,24 @@
+id,requirement,formula,status,dependency
+JW-00,"Proof regulator is genuine compact-group lattice gauge theory, not only a finite quantum-link surrogate",H_link=L2(G); Peter-Weyl H_K -> L2(G),PASS_CONSTRUCTION,peter_weyl_bridge_certificate.json
+JW-01,Compact simple gauge group G and local gauge covariance,U_xy -> G_x U_xy G_y^-1,PASS_CONSTRUCTION,standard Wilson/heat-kernel regulator; SU3 executable check
+JW-02,Gauge-invariant local observables / Gauss-law physical sector,A_phys=A^G; G_x psi=psi,PASS_CONSTRUCTION,native SU3 Gauss reduction + compact-group definition
+JW-03,Positive Euclidean regulator / transfer matrix,"<Theta F F>_a,L >=0",PASS_THEOREM_AT_REGULATOR,Wilson reflection positivity (Osterwalder-Seiler); heat-kernel positive-type proof
+JW-04,Independent UV and thermodynamic regulator limits,a_r=L*/2^r ->0; L_s->infinity,PASS_CONSTRUCTION,Gamma_rs and refinement_identity.csv
+JW-05,Local classical Yang-Mills continuum action,ReTr(I-U_p)=a^4 Tr(F^2)/2+O(a^6),PASS_LOCAL_ASYMPTOTICS,wilson_continuum_scaling.csv
+JW-06A,Asymptotically-free UV trajectory,g0(a)->0,PASS_PERTURBATIVE_PLUS_BALABAN_SMALL_FIELD_INPUT,rg_trajectory.csv; Balaban 1987/88
+JW-06B,All-field nonperturbative RG control from UV to fixed physical block scale,R^k S_a -> S_LB with uniform polymer bounds,OPEN_BRIDGE_LEMMA,large-field/small-field gluing and scale-uniform bounds
+JW-07A,Exact Schur correction has no linear term,Sigma(E)=B(D-E)^-1 B*,PASS_ALGEBRAIC_THEOREM,Schur identity
+JW-07B,Strong-block quadratic contraction basin,eta_(k+1)<=A eta_k^2/delta*,PASS_ABSTRACT_THEOREM_AND_NUMERIC_CERTIFICATE,schur_rg_canonical_certificate.json; locality path count A<=400 under stated extraction norm
+JW-07C,Native/standard Wilson RG enters and remains in certified Schur basin,"exists k0: (eta_k,delta_k,Delta_k) in B_gap for all k>=k0",OPEN_BRIDGE_LEMMA,JW-06B + explicit matching of Wilson effective action to Schur extraction norm
+JW-07D,Regulator- and volume-uniform physical spectral gap,"inf_(r,s) gap(H_rs)>=m*>0",DEPENDENT_ON_JW07C,JW-07A/B/C
+JW-08A,Infinite-volume limits of gauge-invariant local expectations,omega_infty(A)=lim_s omega_rs(A),OPEN_CONVERGENCE_LEMMA,uniform clustering/tightness in gauge-invariant local algebra
+JW-08B,Continuum Schwinger distributions exist,"S_n=lim_r lim_s S_n^(r,s)",OPEN_CONVERGENCE_LEMMA,UV renormalization + composite-operator bounds
+JW-08C,Non-Gaussian/nontrivial continuum state,S_4^T not identically 0 (or equivalent),OPEN_PERSISTENCE_LEMMA,nonzero connected gauge-invariant continuum correlator
+JW-09A,Reflection positivity survives the limit,<Theta F F>=lim <Theta F F>_rs >=0,PASS_LIMIT_LEMMA_IF_JW08B,JW-03 + convergence
+JW-09B,Euclidean invariance restored,S_n(Rx_i+a)=S_n(x_i),OPEN_SYMMETRY_LIMIT_LEMMA,rotational restoration / regulator universality
+JW-09C,"Regularity, symmetry, clustering OS axioms",OS0-OS4/appropriate equivalent,OPEN_AXIOM_BOUNDS,JW-08 + JW-07D
+JW-10,OS/Wightman reconstruction,"{S_n}->(H,Omega,P_mu,A)",STANDARD_THEOREM_ON_JW09,Osterwalder-Schrader reconstruction
+JW-11,Nontrivial relativistic Yang-Mills theory on R4,connected gauge-invariant scattering/correlator sector nonzero,DEPENDENT_ON_JW08C_JW10,JW-08C + reconstruction
+JW-12A,Continuum spectral exclusion,"Spec(H) cap (0,m*)=empty",PASS_SPECTRAL_TRANSFER_LEMMA_IF_JW07D_JW08_JW09,positive spectral measure + uniform exponential decay
+JW-12B,Finite positive mass parameter,0<Delta<infinity,DEPENDENT_ON_JW12A_AND_NONTRIVIAL_SPECTRAL_SUPPORT,JW-11 + local finite-energy excitation
+JW-13,Extension from SU3 executable representative to arbitrary compact simple G,C2(R)>0; Peter-Weyl; positive heat kernel; same closure estimates,OPEN_UNIFORM_GROUP_GENERALIZATION,group-uniform construction of JW-06B/JW-07C/JW-08 for each compact simple G

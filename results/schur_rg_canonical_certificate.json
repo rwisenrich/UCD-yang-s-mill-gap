@@ -1,0 +1,94 @@
+{
+  "g": 8.0,
+  "lambda": 0.05,
+  "LB": 1.0,
+  "E0": -0.2000036198173253,
+  "Delta0": 0.09998915391358655,
+  "eta0": 0.0703125,
+  "delta0": 170.74167028648398,
+  "A": 400.0,
+  "delta_fraction": 0.5,
+  "delta_star": 85.37083514324199,
+  "x0": 0.32944506110089744,
+  "contraction_condition": true,
+  "infinite_self_energy_sum_bound": 6.496071390629655e-05,
+  "certified_Q_separation_floor": 170.74154036505618,
+  "Q_separation_self_consistent": true,
+  "certified_gap_floor": 0.09985923248577395,
+  "positive_gap_floor": true,
+  "sequence": [
+    {
+      "k": 0,
+      "eta_majorant": 0.0703125,
+      "self_energy_majorant": 5.791026464664213e-05,
+      "cumulative_self_energy": 5.791026464664213e-05
+    },
+    {
+      "k": 1,
+      "eta_majorant": 0.02316410585865685,
+      "self_energy_majorant": 6.28523545928479e-06,
+      "cumulative_self_energy": 6.419550010592692e-05
+    },
+    {
+      "k": 2,
+      "eta_majorant": 0.002514094183713916,
+      "self_energy_majorant": 7.403780874321798e-08,
+      "cumulative_self_energy": 6.426953791467014e-05
+    },
+    {
+      "k": 3,
+      "eta_majorant": 2.9615123497287195e-05,
+      "self_energy_majorant": 1.0273479675910144e-11,
+      "cumulative_self_energy": 6.426954818814981e-05
+    },
+    {
+      "k": 4,
+      "eta_majorant": 4.109391870364058e-09,
+      "self_energy_majorant": 1.978087893351364e-19,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 5,
+      "eta_majorant": 7.912351573405455e-17,
+      "self_energy_majorant": 7.333336650171877e-35,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 6,
+      "eta_majorant": 2.9333346600687505e-32,
+      "self_energy_majorant": 1.0078913031040888e-65,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 7,
+      "eta_majorant": 4.031565212416356e-63,
+      "self_energy_majorant": 1.903872444810255e-127,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 8,
+      "eta_majorant": 7.615489779241021e-125,
+      "self_energy_majorant": 6.7933837686388656e-251,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 9,
+      "eta_majorant": 2.717353507455546e-248,
+      "self_energy_majorant": 0.0,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 10,
+      "eta_majorant": 0.0,
+      "self_energy_majorant": 0.0,
+      "cumulative_self_energy": 6.426954818815002e-05
+    },
+    {
+      "k": 11,
+      "eta_majorant": 0.0,
+      "self_energy_majorant": 0.0,
+      "cumulative_self_energy": 6.426954818815002e-05
+    }
+  ],
+  "Acrit_delta_half": 1213.4595836811004
+}

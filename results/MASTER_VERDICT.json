@@ -1,0 +1,35 @@
+{
+  "release": "UCD_YM_JAFFE_WITTEN_SUBMISSION_v3_0",
+  "finite_native_block_gap": 3.145208363542948,
+  "transfer_matrix": {
+    "transfer_min_eigenvalue": 0.16448779751375747,
+    "transfer_top_eigenvalue": 0.9999999999999997,
+    "transfer_second_eigenvalue": 0.6749267952699152,
+    "hamiltonian_gap": 3.145208363542948,
+    "transfer_reconstructed_gap": 3.145208363542947,
+    "gap_residual": 8.881784197001252e-16,
+    "positive_self_adjoint_transfer": true
+  },
+  "wilson_small_plaquette_error_order_fit": 4.006810396334776,
+  "one_loop_beta_b0_SU3": 0.06965831375410722,
+  "rg_max_recovery_residual": 2.220446049250313e-16,
+  "reflection_pushforward": {
+    "trials": 200,
+    "minimum_coarse_kernel_eigenvalue": 23.546386131514364,
+    "minimum_test_quadratic_form": 989.2388885160248,
+    "pass": true
+  },
+  "spectral_correlator_first_support": 3.925289047340767,
+  "spectral_correlator_nontrivial_weight": 3.4417741154766692,
+  "exact_refinement_max_residual": 0.0,
+  "machine_checked_obligations_passed": 5,
+  "machine_checked_obligations_total": 12,
+  "critical_dependency_chain": [
+    "JW-7",
+    "JW-8",
+    "JW-9",
+    "JW-11",
+    "JW-12"
+  ],
+  "formal_target": "Construct nontrivial quantum Yang-Mills on R^4 satisfying OS/Wightman-strength axioms with Spec(H) subset {0} union [Delta,infinity), Delta>0."
+}
