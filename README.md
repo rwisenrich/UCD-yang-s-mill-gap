@@ -1,29 +1,21 @@
-# UCD Yang-Mills Jaffe-Witten Submission v4.0
+# UCD Yang-Mills Existence and Mass Gap — Jaffe-Witten v6
 
-This repository is the public verification repository for Richard Wise's UCD Yang-Mills existence and mass-gap construction.
+Public verification repository for Richard Wise's UCD Yang-Mills/Jaffe-Witten construction.
 
-The manuscript is organized directly against the Jaffe-Witten Millennium specification as four linked stages:
+## Main theorem architecture
 
-`A -> B -> C -> D`
+The exact regulator-to-QFT chain is organized directly against the Jaffe-Witten specification:
 
-- **A**: compact-group lattice regulator, gauge-invariant physical sector, reflection-positive transfer structure, and a regulator/volume-uniform spectral-gap theorem.
-- **B**: thermodynamic and continuum convergence of gauge-invariant Schwinger functions to a nontrivial Euclidean theory on R^4.
-- **C**: Osterwalder-Schrader reconstruction to the physical Hilbert-space/Wightman theory.
-- **D**: transfer of the uniform positive spectral threshold to the reconstructed Hamiltonian.
+`compact-group regulator -> exact RG -> thermodynamic/continuum Schwinger family -> OS reconstruction -> continuum spectral gap`
 
-## Proof regulator
+The proof regulator is `L^2(G)` on every link with Wilson/heat-kernel transfer. H504 and the finite SU(3) quantum-link model are retained as exact algebraic Schur/Feshbach workbenches; they are not substituted for the compact-group continuum regulator.
 
-The proof regulator is the genuine compact-group lattice gauge Hilbert space
+v6 proves the general compactness, reflection-positivity, source-Cauchy, AF-summability, symmetry-extension and spectral-transfer lemmas and reduces the entire remaining quantitative burden to two atomic estimates:
 
-`H_link = L^2(G)`
+- **A1 — nonperturbative RG corridor:** carry the exact compact-group action from the asymptotically-free UV regime into a certified massive terminal basin with regulator- and volume-independent constants.
+- **A2 — source-extended RG uniformity:** obtain regulator/volume-independent source analyticity and localized source bounds for gauge-invariant curvature composites, metric/anisotropy insertions, stress tensor and OPE data.
 
-with Wilson/heat-kernel transfer structure. The finite 20-dimensional SU(3) quantum-link model is retained as an independent algebraic/computational workbench, not substituted for `L^2(SU(3))`.
-
-The finite-to-continuum bridge is explicit through Peter-Weyl truncations
-
-`H_K = direct_sum_{p+q <= K} V_(p,q) tensor V_(p,q)^*`,
-
-whose dimensions increase to the dense Peter-Weyl subspace of `L^2(SU(3))`.
+The paper proves `A1 + A2 => nontrivial 4D Yang-Mills + 0 < mass gap < infinity` through the OS reconstruction chain.
 
 ## Reproduce
 
@@ -33,29 +25,35 @@ python run_all.py
 python -m pytest -q
 ```
 
-The current regression suite returns **10/10 tests** and the independent finite-block verifier returns **11/11 checks**.
+Current reproduced regression result: **24/24 tests pass**. The v6 independent verifier returns **9/9 PASS**, and the final meta-verifier returns **6/6 PASS**.
 
-## Main manuscript and proof graph
+## Referee entry points
 
-- `paper/parts/` — canonical manuscript source in ordered parts.
-- `docs/REFEREE_AUDIT.md` — referee-facing dependency audit.
-- `results/jaffe_witten_obligation_ledger_v4.csv` — line-item Jaffe-Witten obligation ledger.
-- `results/PROOF_GRAPH_v4.json` — machine-readable theorem dependency graph.
-- `src/schur_rg_contraction.py` — exact Schur quadratic-contraction theorem and certificates.
-- `src/peter_weyl_su3.py` — SU(3) Peter-Weyl truncation bridge.
-- `src/heat_kernel_transfer.py` — positive heat-kernel transfer/semigroup checks.
-- `src/native_su3_block.py` — finite SU(3) algebraic workbench.
-- `.github/workflows/verify.yml` — automated reproducibility checks.
-- `.github/workflows/build-release.yml` — builds PDF/DOCX, reruns checks, packages and commits release outputs.
+- `paper/UCD_YM_Jaffe_Witten_Submission_v6.md`
+- `paper/UCD_YM_Jaffe_Witten_Submission_v6.pdf`
+- `paper/UCD_YM_Jaffe_Witten_Submission_v6.docx`
+- `docs/JW_GATE_CLOSURE_v6.md`
+- `docs/ATOMIC_ESTIMATE_ATTACK_v6.md`
+- `docs/EXTERNAL_LITERATURE_AUDIT_v6.md`
+- `docs/REFEREE_AUDIT_v6.md`
+- `results/jaffe_witten_obligation_ledger_v6.csv`
+- `results/ATOMIC_PROOF_FRONTIER_v6.json`
+- `results/PROOF_STATUS_v6.json`
+- `results/MASTER_VERDICT_v6.json`
+- `results/final_verifier_v6.csv`
+- `MANIFEST.sha256`
 
-## Central theorem chain
+## Core code
 
-For finite regulator Hamiltonians `H_(r,s)`, the target is
+- `src/native_su3_block.py`
+- `src/peter_weyl_su3.py`
+- `src/heat_kernel_transfer.py`
+- `src/schur_rg_contraction.py`
+- `src/af_summability.py`
+- `src/strong_coupling_endpoint.py`
+- `src/closure_theorems_v6.py`
+- `src/balaban_uv_bridge_v6.py`
+- `src/atomic_reduction_v6.py`
+- `src/final_verifier_v6.py`
 
-`inf_(r,s) gap(H_(r,s)) = m_* > 0`.
-
-After convergence of the reflection-positive Schwinger family and OS reconstruction, the spectral-transfer theorem yields
-
-`Spec(H) intersect (0,m_*) = empty`.
-
-The exact dependency status is recorded in `results/jaffe_witten_obligation_ledger_v4.csv`; no finite-regulator calculation is silently promoted into a continuum theorem.
+See `results/ATOMIC_PROOF_FRONTIER_v6.json` for the exact final dependency contract.
