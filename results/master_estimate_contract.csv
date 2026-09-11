@@ -1,0 +1,8 @@
+id,master,quantity,required_bound,independence
+M1.1,M1_GLOBAL_RG_GAP,UV all-field localized RG activity norm,"sup_(a,L,k<=kB) ||E_k||_KP <= C_G and locality decay exp(-kappa d)","C_G,kappa independent of a,L"
+M1.2,M1_GLOBAL_RG_GAP,terminal matching norm,"epsilon_Hess < K_S(G,beta*) and epsilon_mix < K_mix(G,beta*) OR Schur x0<1 with delta_*>0","margins independent of a,L"
+M1.3,M1_GLOBAL_RG_GAP,physical mass floor,"inf_(a,L) m_a,L >= m_G > 0 after terminal matching","m_G depends on G and renormalized scale, not regulator/volume"
+M2.1,M2_LOCAL_FIELD_CONTINUUM,renormalized composite insertions,"|S_n,a(P_i;f_i)| <= C_G^n n! prod_i p_N(f_i)","C_G,N independent of a,L for each finite operator family"
+M2.2,M2_LOCAL_FIELD_CONTINUUM,Cauchy/convergence,"||S_n,a-S_n,a/2||_(S prime,N) <= C a^alpha","C,alpha independent of L after thermodynamic passage"
+M2.3,M2_LOCAL_FIELD_CONTINUUM,hypercubic anisotropy defect,"|S_n,a(Rx)-S_n,a(x)| <= C_R a^alpha for generators/dense set of R in SO(4)",C_R uniform on compact supports
+M2.4,M2_LOCAL_FIELD_CONTINUUM,short-distance structure,"renormalized beta function, stress-tensor Ward identities and OPE coefficients satisfy AF asymptotics",remainder bounds uniform as a->0

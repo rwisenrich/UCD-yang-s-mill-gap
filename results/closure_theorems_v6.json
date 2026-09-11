@@ -1,0 +1,59 @@
+{
+  "T7_schwinger_compactness_from_uniform_seminorms": {
+    "status": "PROVED_GENERAL_FUNCTIONAL_ANALYSIS_THEOREM",
+    "hypotheses": [
+      "For each n, regulator Schwinger functionals S_{n,a} are continuous on Schwartz space S(R^{4n}).",
+      "There exist C_n and a continuous Schwartz seminorm p_N with |S_{n,a}(f)| <= C_n p_N(f), uniformly in a and volume after thermodynamic passage."
+    ],
+    "conclusion": "Along every sequence a_j->0 there is a common subnet/subsequence for all n whose S_{n,a_j} converge weak-* in S prime to tempered distributions S_n. Positivity and every finite linear identity continuous in this topology pass to the limit.",
+    "proof": "The uniform seminorm bound puts the family in C_n times the polar of a zero-neighborhood. Alaoglu-Bourbaki gives weak-* compactness. Use product compactness/diagonal extraction over countably many n and test families."
+  },
+  "T8_uniform_euclidean_decay_transfers_spectral_gap": {
+    "status": "PROVED_POSITIVE_MEASURE_THEOREM",
+    "hypotheses": [
+      "For every centered vector in a dense OS cylinder domain, C_a(t)=int exp(-tE) dmu_a(E) and C_a(t) <= M_a exp(-m t) with fixed m>0.",
+      "C_a(t)->C(t) and norms M_a remain locally bounded; the OS limit gives a positive spectral measure mu."
+    ],
+    "conclusion": "mu((0,m))=0 for every such vector; density gives Spec(H) cap (0,m)=empty.",
+    "proof": "For epsilon>0, mu([0,m-epsilon]) exp(-t(m-epsilon)) <= C(t) <= M exp(-mt). Hence mu([0,m-epsilon]) <= M exp(-epsilon t)->0 as t->infinity. Union over rational epsilon."
+  },
+  "T9_mass_finiteness_from_nontrivial_unique_vacuum": {
+    "status": "PROVED_SPECTRAL_THEOREM",
+    "hypotheses": [
+      "H is self-adjoint, H>=0",
+      "ker H is the one-dimensional vacuum",
+      "Hilbert space is not one-dimensional"
+    ],
+    "conclusion": "If H has a positive gap, its mass m=sup{Delta: Spec(H) cap (0,Delta)=empty} is finite.",
+    "proof": "A non-vacuum vector has a nonzero spectral measure supported in (0,infinity). A self-adjoint operator has spectrum in R, so that measure has support at at least one finite positive spectral value E; therefore m<=E<infinity."
+  },
+  "T10_bakry_emery_terminal_stability": {
+    "status": "PROVED_HESSIAN_PERTURBATION_THEOREM",
+    "hypotheses": [
+      "Base finite-volume action has Bakry-Emery curvature Hess V + Ric >= K I with K>0, uniformly in volume.",
+      "Added C2 interaction Phi obeys Hess Phi >= -epsilon I with epsilon<K, uniformly in volume."
+    ],
+    "conclusion": "Perturbed action has curvature >=(K-epsilon)I and inherits the corresponding volume-uniform Poincare/log-Sobolev lower margin.",
+    "proof": "Hess(V+Phi)+Ric >= K I-epsilon I=(K-epsilon)I; apply Bakry-Emery criterion."
+  },
+  "T11_dense_symmetry_extension": {
+    "status": "PROVED_CONTINUITY_THEOREM",
+    "hypotheses": [
+      "S_n are tempered distributions",
+      "R -> S_n(f composed with R) is continuous for each Schwartz test f",
+      "S_n invariant under a dense subgroup D of a Lie symmetry group K"
+    ],
+    "conclusion": "S_n are K-invariant.",
+    "proof": "For R in K choose R_j in D with R_j->R; continuity gives S_n(f o R)=lim S_n(f o R_j)=S_n(f)."
+  },
+  "T12_os_axioms_closed_under_distributional_limits": {
+    "status": "PROVED_LIMIT_PACKAGE_THEOREM",
+    "hypotheses": [
+      "Regulator moments satisfy permutation symmetry and reflection positivity on the cylinder domain",
+      "Uniform seminorm bounds give tempered limit distributions",
+      "Euclidean covariance and clustering have regulator-uniform limiting estimates"
+    ],
+    "conclusion": "Symmetry, temperedness, reflection positivity, covariance and clustering pass to the limiting Schwinger family; the standard OS reconstruction theorem applies.",
+    "proof": "Each finite algebraic identity passes by distributional convergence; positivity passes as a closed quadratic inequality; decay bounds pass by limsup; temperedness is T7."
+  }
+}

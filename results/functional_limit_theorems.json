@@ -1,0 +1,58 @@
+{
+  "T1_thermodynamic_subsequence": {
+    "status": "PROVED_GENERAL_TOPOLOGICAL_THEOREM",
+    "hypotheses": [
+      "G compact",
+      "finite-volume measures periodically extended to G^E",
+      "local observables continuous cylinder functions"
+    ],
+    "conclusion": "At fixed lattice spacing, a subnet/subsequence has a weak thermodynamic limit state. Positivity, normalization, lattice translations and local gauge invariance pass to the limit.",
+    "mechanism": "Tychonoff compactness + Prokhorov/tightness + passage of continuous local identities to weak limits."
+  },
+  "T2_inductive_holonomy_state": {
+    "status": "PROVED_GENERAL_COMPACTNESS_THEOREM",
+    "hypotheses": [
+      "nested unital C*-algebras A_r of bounded gauge-invariant holonomy observables",
+      "states at arbitrarily fine regulators"
+    ],
+    "conclusion": "There exists a compatible subnet of restrictions defining a positive norm-one state on the inductive-limit holonomy C*-algebra.",
+    "mechanism": "compactness of product of weak-* compact state spaces + diagonal/subnet compatibility."
+  },
+  "T3_reflection_positivity_limit": {
+    "status": "PROVED_LIMIT_THEOREM",
+    "hypotheses": [
+      "reflection-positive regulator states",
+      "convergence on positive-time cylinder algebra"
+    ],
+    "conclusion": "The limiting state is reflection positive.",
+    "mechanism": "For each cylinder F, omega(Theta(F)F)=lim omega_n(Theta(F)F)>=0; extend by density."
+  },
+  "T4_dense_translation_extension": {
+    "status": "PROVED_CONTINUITY_THEOREM",
+    "hypotheses": [
+      "limit distributions continuous under translations in the Schwartz topology",
+      "invariance under dense dyadic translation subgroup"
+    ],
+    "conclusion": "Full R^4 translation invariance.",
+    "mechanism": "continuity + density."
+  },
+  "T5_gap_to_time_clustering": {
+    "status": "PROVED_SPECTRAL_THEOREM",
+    "hypotheses": [
+      "H>=0, unique vacuum Omega",
+      "Spec(H) cap (0,m)=empty",
+      "A,B centered local operators"
+    ],
+    "conclusion": "|<A Omega,e^{-tH}B Omega>| <= exp(-mt)||A*Omega|| ||B Omega||.",
+    "mechanism": "spectral calculus on Omega-perp."
+  },
+  "T6_nontriviality_from_running": {
+    "status": "PROVED_REDUCTION_THEOREM",
+    "hypotheses": [
+      "renormalized coupling g_R(mu0)>0",
+      "Callan-Symanzik beta(g)=-b0 g^3+O(g^5), b0>0, realized as nonzero local OPE/vertex data"
+    ],
+    "conclusion": "The continuum local theory is not the zero-coupling Gaussian fixed point.",
+    "mechanism": "the Gaussian fixed point has vanishing interaction coupling/OPE coefficient; a nonzero running interaction datum excludes equality with it."
+  }
+}

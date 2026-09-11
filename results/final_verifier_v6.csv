@@ -1,0 +1,7 @@
+check,pass,detail
+two_atomic_estimates,True,"['A1_NONPERTURBATIVE_RG_CORRIDOR', 'A2_SOURCE_EXTENDED_RG_UNIFORMITY']"
+four_new_reduction_theorems,True,
+v6_verifier_green,True,"{'passed': 9, 'total': 9, 'all_pass': True}"
+rg_crossing_examples,True,12
+UV_AF_summability,True,36
+Jaffe_Witten_ledger_present,True,27

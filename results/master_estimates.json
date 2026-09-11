@@ -1,0 +1,19 @@
+{
+  "M1_GLOBAL_RG_GAP": {
+    "statement": "For each fixed compact simple G, the exact all-field RG from the asymptotically-free Wilson/heat-kernel regulator reaches a volume-uniform massive terminal basin at a fixed physical scale and yields inf_(a,L) gap >= m_G>0.",
+    "subestimates": [
+      "M1.1",
+      "M1.2",
+      "M1.3"
+    ]
+  },
+  "M2_LOCAL_FIELD_CONTINUUM": {
+    "statement": "For every finite family of gauge-invariant curvature differential polynomials, source-extended renormalization produces regulator-uniform tempered-distribution bounds, convergence, O(4) restoration, and the required AF/stress-tensor/OPE short-distance structure.",
+    "subestimates": [
+      "M2.1",
+      "M2.2",
+      "M2.3",
+      "M2.4"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "release": "v6.0",
+  "former_eight_open_gates": "reduced by exact topological/functional/spectral theorems",
+  "remaining_master_estimates": [
+    "M1A_ALL_FIELD_RG_CONTROL",
+    "M1B_MASSIVE_TERMINAL_ENTRY",
+    "M2A_COMPOSITE_FIELD_UNIFORMITY",
+    "M2B_O4_RESTORATION",
+    "M2C_SHORT_DISTANCE_YM"
+  ],
+  "count": 5,
+  "dependency_chain": "(M1A+M1B)+(M2A+M2B+M2C) -> OS axioms -> OS reconstruction -> nontrivial R4 Yang-Mills -> Spec(H) cap (0,m_G)=empty, 0<m_G<infinity",
+  "master_estimates": {
+    "M1A_ALL_FIELD_RG_CONTROL": {
+      "statement": "For each fixed compact simple G, the exact Wilson/heat-kernel all-field RG from arbitrarily fine regulator to a fixed physical block admits localized effective actions with constants C_G,kappa_G independent of ultraviolet depth and volume, in a norm that feeds the terminal theorem.",
+      "target": "sup_k ||E_k||_loc <= C_G and exact source-to-terminal norm dictionary"
+    },
+    "M1B_MASSIVE_TERMINAL_ENTRY": {
+      "statement": "At a finite physical blocking scale the exact effective action lies in a proven massive basin with explicit margin, and all later blocking preserves a uniform exponential correlation rate m_G>0.",
+      "target": "terminal Hessian/KP/mixing inequalities with epsilon<K or equivalent Schur basin, uniform in volume"
+    },
+    "M2A_COMPOSITE_FIELD_UNIFORMITY": {
+      "statement": "For every finite family of gauge-invariant curvature differential polynomials, renormalized source insertions obey a regulator/volume-uniform Schwartz seminorm estimate.",
+      "target": "|S_{n,a}(P_i;f_i)| <= C_G^n n! prod p_N(f_i)"
+    },
+    "M2B_O4_RESTORATION": {
+      "statement": "Hypercubic anisotropy of the renormalized Schwinger distributions vanishes uniformly on compact Schwartz sets.",
+      "target": "|S_{n,a}(f)-S_{n,a}(f o R)| <= C_R a^alpha for dense R subset, then T11"
+    },
+    "M2C_SHORT_DISTANCE_YM": {
+      "statement": "The local continuum field family carries the asymptotically-free Yang-Mills short-distance expansion, including nonzero running interaction datum, stress tensor Ward identities, and OPE coefficients/remainders.",
+      "target": "beta(g)=-b0g^3+... plus uniform composite-source/OPE remainder control"
+    }
+  }
+}

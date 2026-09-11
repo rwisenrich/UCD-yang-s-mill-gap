@@ -1,0 +1,9 @@
+{
+  "theorem": "AF ultraviolet remainder summability",
+  "hypothesis": "g_j^{-2} >= g_B^{-2}+2 b0 log(L) j, p>2, ||R_j|| <= C_R g_j^p",
+  "claim": "sum_j ||R_j|| <= C_R [g_B^p + g_B^(p-2)/(2 b0 log(L)(p/2-1))], independent of UV depth",
+  "p4_claim": "sum_j g_j^4 <= g_B^4 + g_B^2/(2 b0 log L)",
+  "proof": "monotone integral comparison for f(x)=(g_B^{-2}+cx)^(-p/2)",
+  "representative_numeric_checks": 28,
+  "checks_pass": true
+}

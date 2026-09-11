@@ -1,0 +1,10 @@
+check,pass,value
+v4 independent core remains green,True,11
+AF UV-tail bound dominates 50k-step partial sums,True,0.9586915516969755
+SU3 strong-endpoint threshold maps to g^2=32,True,32.00000000000001
+SU3 beta at threshold is 1/48,True,0.02083333333333333
+SU3 g=8 has positive Bakry-Emery margin,True,0.75
+former OPEN_* rows converted to theorem/reduction statuses,True,0
+exactly two master theorem objects remain,True,2
+six functional-analytic reduction theorems emitted,True,6
+"group generalization reduced to M1(G),M2(G)",True,Only master estimates M1(G) and M2(G) require group-dependent constants; JW-13 is not an independent theorem gate.

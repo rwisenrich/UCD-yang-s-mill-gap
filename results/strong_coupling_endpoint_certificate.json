@@ -1,0 +1,11 @@
+{
+  "theorem_external": "Shen-Zhu-Zhu strong-coupling SU(N) lattice Yang-Mills",
+  "their_action": "S=N beta Re sum_p Tr(Q_p)",
+  "their_condition_d4": "|beta|<1/48",
+  "wilson_mapping": "N beta = beta_W/N = 2/g^2, so beta=2/(N g^2)",
+  "SU3_standard_g_threshold": 5.656854249492381,
+  "SU3_threshold_squared": 32.00000000000001,
+  "SU3_g8_KS": 0.75,
+  "stability_lemma": "If an added C2 effective interaction Phi has Hess Phi >= -epsilon I uniformly in volume, Bakry-Emery curvature remains >= K_S-epsilon. Thus epsilon<K_S preserves the finite-volume LSI/Poincare constant uniformly in volume.",
+  "SU3_g8_epsilon_margin": 0.75
+}

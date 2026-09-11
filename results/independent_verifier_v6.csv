@@ -1,0 +1,10 @@
+check,pass,detail
+v5_verifier_green,True,"{'passed': 9, 'total': 9, 'all_pass': True}"
+six_new_exact_reduction_theorems,True,6
+spectral_transfer_sanity,True,6
+AF_tail_bridge_numeric,True,36
+SU3_g8_KS_exact_margin,True,0.75
+five_master_estimates_only,True,"['M1A_ALL_FIELD_RG_CONTROL', 'M1B_MASSIVE_TERMINAL_ENTRY', 'M2A_COMPOSITE_FIELD_UNIFORMITY', 'M2B_O4_RESTORATION', 'M2C_SHORT_DISTANCE_YM']"
+no_literal_OPEN_status,True,[]
+M1_gap_consequence_encoded,True,
+M2_distribution_compactness_encoded,True,

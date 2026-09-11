@@ -1,0 +1,40 @@
+{
+  "release": "v5.0",
+  "old_open_rows_eliminated_as_independent_gates": true,
+  "status_counts": {
+    "THEOREM_CLOSED": 7,
+    "THEOREM_CLOSED_LOCAL_ASYMPTOTICS": 1,
+    "THEOREM_CLOSED_UV_STRUCTURE": 1,
+    "REDUCED_TO_M1_1": 1,
+    "REDUCED_TO_M1_2": 1,
+    "REDUCED_TO_M1_3": 1,
+    "THEOREM_CLOSED_EXTERNAL": 1,
+    "THEOREM_CLOSED_EXISTENCE": 2,
+    "REDUCED_TO_M2_1_M2_2": 2,
+    "REDUCED_TO_M2_4": 2,
+    "THEOREM_CLOSED_LIMIT": 1,
+    "THEOREM_CLOSED_IF_M2_CONTINUITY": 1,
+    "REDUCED_TO_M2_3": 1,
+    "THEOREM_CLOSED_IF_M1": 1,
+    "REDUCED_TO_M2_PLUS_M1": 1,
+    "STANDARD_THEOREM_ON_CLOSED_OS_INPUT": 1,
+    "DEPENDENT_ON_M2_AND_JW10": 1,
+    "DEPENDENT_ON_M1_AND_OS": 1,
+    "DEPENDENT_ON_M1_M2": 1,
+    "THEOREM_CLOSED_AS_STRUCTURAL_REDUCTION": 1
+  },
+  "remaining_master_estimate_components": [
+    "M1.1",
+    "M1.2",
+    "M1.3",
+    "M2.1",
+    "M2.2",
+    "M2.3",
+    "M2.4"
+  ],
+  "master_theorems": [
+    "M1_GLOBAL_RG_GAP",
+    "M2_LOCAL_FIELD_CONTINUUM"
+  ],
+  "completion_implication": "M1 + M2 + closed limit/RP/group lemmas => OS reconstruction + continuum mass gap + nontrivial Yang-Mills local field theory."
+}

@@ -1,0 +1,14 @@
+{
+  "theorem": "Localized AF-tail summability bridge",
+  "source_shape": "Balaban CMP119 localized remainder has a small-coupling power times exponential localization; the source-to-project norm dictionary must preserve the power/locality bound.",
+  "hypotheses": [
+    "||R_j||_kappa <= C_R g_j^p with p>2",
+    "g_j^{-2} >= g_B^{-2}+2 b0 log(L) j",
+    "constants C_R,kappa,p,b0,L independent of ultraviolet depth and volume"
+  ],
+  "conclusion": "sum_{j>=0} ||R_j||_kappa <= C_R [g_B^p + g_B^(p-2)/(2 b0 log(L)(p/2-1))].",
+  "proof": "Monotone integral comparison of (g_B^{-2}+c x)^(-p/2).",
+  "checks": 36,
+  "all_pass": true,
+  "meaning": "The infinite number of asymptotically-free UV steps cannot by itself produce a divergent remainder accumulation once the localized source bound is expressed in this norm."
+}

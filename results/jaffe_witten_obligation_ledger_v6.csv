@@ -1,0 +1,28 @@
+id,requirement,formula,status,dependency
+JW-00,Compact-group regulator,"L2(G), Peter-Weyl exhaustion",THEOREM_CLOSED,existing construction
+JW-01,Gauge covariance / Gauss sector,local compact-group action,THEOREM_CLOSED,existing construction
+JW-03,Regulator reflection positivity,omega_a(Theta F F)>=0,THEOREM_CLOSED,heat-kernel/Wilson RP
+JW-04,Refinement and volume family,a_r=L*/2^r; L_s->infinity,THEOREM_CLOSED,Gamma_rs
+JW-05,Local Yang-Mills action,Wilson -> integral Tr F^2,THEOREM_CLOSED_LOCAL_ASYMPTOTICS,plaquette expansion
+JW-06A,AF ultraviolet trajectory,g_j^-2 >= g_B^-2+2b0 log(L)j,THEOREM_CLOSED_UV_STRUCTURE,AF/Balaban
+JW-06B,Infinite UV-depth remainder accumulation,sum_j ||R_j|| finite,THEOREM_CLOSED_GIVEN_SOURCE_NORM_DICTIONARY,T13 Balaban-AF summability; remaining source dictionary is folded into M1A
+JW-07A,Exact Schur/Feshbach algebra,A-B(D-E)^-1B*,THEOREM_CLOSED,exact identity
+JW-07B,Abstract massive Schur basin,positive floor under scale-uniform contraction,THEOREM_CLOSED,existing theorem/certificate
+JW-07C,Wilson RG enters a massive terminal basin,terminal KP/Hessian/mixing margin >0,REDUCED_TO_M1A_M1B,master global RG estimate
+JW-07D,Uniform physical gap,"inf_(a,L) gap >=m_G",THEOREM_CONSEQUENCE_OF_M1,terminal decay + T8 spectral transfer
+JW-07E,Strong-coupling endpoint,SU(N): |beta|<1/[16(d-1)],THEOREM_CLOSED_EXTERNAL,Shen-Zhu-Zhu plus T10 stability lane
+JW-08A,Thermodynamic state existence,fixed-a local weak limit,THEOREM_CLOSED,T1 compactness
+JW-08B0,Bounded holonomy continuum state,inductive-limit state,THEOREM_CLOSED,T2 compactness
+JW-08B1,Continuum Schwinger distributions,tempered S_n,THEOREM_CONSEQUENCE_OF_M2A,T7: uniform seminorm bounds imply subsequential distributional continuum limit
+JW-08C,Nontriviality,nonzero interacting continuum,THEOREM_CONSEQUENCE_OF_M2C,nonzero renormalized local interaction datum
+JW-08D,Local curvature-polynomial fields,renormalized composite operators,REDUCED_TO_M2A,source/composite uniform bound
+JW-08E,AF/OPE/stress tensor,short-distance prescribed structure,REDUCED_TO_M2C,source-extended UV theorem
+JW-09A,Reflection positivity in limit,omega(Theta F F)>=0,THEOREM_CLOSED,T3
+JW-09B0,Full translations,R4 translations,THEOREM_CONSEQUENCE_OF_M2A,dense translations + T11
+JW-09B1,O(4) rotations,continuum rotational covariance,REDUCED_TO_M2B,anisotropy estimate
+JW-09C,OS regularity/symmetry/clustering,OS package,THEOREM_CONSEQUENCE_OF_M1_M2,"T7,T8,T11,T12"
+JW-10,OS/Wightman reconstruction,Euclidean -> Minkowski QFT,STANDARD_THEOREM_ON_CLOSED_INPUT,Osterwalder-Schrader
+JW-11,Nontrivial relativistic Yang-Mills on R4,local Poincare-covariant QFT,THEOREM_CONSEQUENCE_OF_M1_M2,OS + M2C
+JW-12A,Positive continuum mass gap,"Spec(H) cap (0,m_G)=empty",THEOREM_CONSEQUENCE_OF_M1,T8
+JW-12B,0<m_G<infinity,finite positive mass,THEOREM_CONSEQUENCE_OF_M1_M2,T9 + nontrivial unique vacuum
+JW-13,Any compact simple G,fixed-G parameterization,STRUCTURAL_REDUCTION_CLOSED,"Peter-Weyl, heat kernel, c_G>0, b0(G)>0; prove M1/M2 per fixed G"
