@@ -1,32 +1,36 @@
-# UCD Yang-Mills Existence and Mass Gap — Jaffe-Witten v8
+# UCD Yang-Mills Existence and Mass Gap — Jaffe-Witten Submission
 
-Public verification package for Richard Wise's UCD Yang-Mills/Jaffe-Witten construction.
+Public verification repository for Richard Wise's UCD Yang-Mills/Jaffe-Witten construction.
 
-## Canonical proof chain
+This repository is now maintained as **one stable submission surface**. Ordinary updates replace or extend the canonical files; they do not require another version-number increment. The frozen `v6` filenames remain only as provenance for the build that produced the canonical submission.
 
-`compact-group regulator -> source-extended exact RG -> massive physical-scale endpoint -> Schwinger distributions -> OS reconstruction -> continuum Hamiltonian gap`
+## Canonical deliverables
 
-The continuum regulator is `L^2(G)` per link with Wilson/heat-kernel transfer. The H504 and finite SU(3) quantum-link systems remain exact algebraic workbenches; they are not substituted for the compact-group continuum regulator.
+- `paper/UCD_YM_Jaffe_Witten_Submission.md`
+- `paper/UCD_YM_Jaffe_Witten_Submission.pdf`
+- `paper/UCD_YM_Jaffe_Witten_Submission.docx`
+- `STATUS.md`
+- `docs/ATOMIC_ESTIMATE_ATTACK.md`
+- `docs/JW_GATE_CLOSURE.md`
+- `docs/REFEREE_AUDIT.md`
+- `results/ATOMIC_PROOF_FRONTIER_v6.json`
+- `results/PROOF_STATUS_v6.json`
+- `results/MASTER_VERDICT_v6.json`
+- `results/final_verifier_v6.csv`
+- `MANIFEST.sha256`
 
-## v8 additions
+## Main theorem architecture
 
-v8 adds three exact results that tighten the proof interface:
+`compact-group regulator -> exact RG -> thermodynamic/continuum Schwinger family -> OS reconstruction -> continuum spectral gap`
 
-1. **Transfer interlacing with range-density defect**
-   `lambda2(T') <= lambda2(T) + epsilon + 2 delta + delta^2`.
-2. **Physical generator-gap normalization**
-   `m_a = -log(lambda2(T_a))/a`, so the correct uniform continuum condition is `lambda2(T_a) <= exp(-a m_*)`.
-3. **Local-curvature source-scaling theorem**
-   the elementary bounded-source disc for an `a^-4` normalized local `F^2` operator shrinks like `O(a^4)`, proving that the local-field source sector needs the renormalized all-field RG/cumulant estimate rather than fixed-loop boundedness alone.
+The proof regulator is `L^2(G)` on every link with Wilson/heat-kernel transfer. H504 and the finite SU(3) quantum-link system are retained as exact algebraic Schur/Feshbach workbenches and are not substituted for the compact-group regulator.
 
-## Terminal proof dependency
+The current manuscript proves the general compactness, reflection-positivity, source-Cauchy, AF-summability, symmetry-extension and spectral-transfer reduction lemmas and isolates the remaining quantitative dependency contract as:
 
-All generic limit, positivity, compact-group, UV summability, source-Cauchy, polymer-counting, transfer-normalization and spectral-transfer steps have been reduced to two load-bearing regulator/volume-uniform estimates for each fixed compact simple `G`:
+- `A1_NONPERTURBATIVE_RG_CORRIDOR`
+- `A2_SOURCE_EXTENDED_RG_UNIFORMITY`
 
-- `E1_SOURCE_EXTENDED_ALL_FIELD_RG`
-- `E2_INTERMEDIATE_RG_PROGRESS`
-
-Their exact norm statements are in `results/FINAL_ATOMIC_FRONTIER_v7.json` and `docs/V8_TRANSFER_SOURCE_AUDIT.md`.
+The exact dependency statement is in `results/ATOMIC_PROOF_FRONTIER_v6.json`.
 
 ## Reproduce
 
@@ -36,16 +40,12 @@ python run_all.py
 python -m pytest -q
 ```
 
-Current local regression: **33/33 tests PASS**. v6 independent verifier: **9/9 PASS**. v7 terminal-reduction verifier: **7/7 PASS**. v8 transfer/source verifier: **6/6 PASS**.
+Frozen build verification:
 
-## Referee entry points
+- **24/24 pytest tests PASS**
+- **9/9 independent v6 checks PASS**
+- **6/6 final meta-verification checks PASS**
 
-- `paper/UCD_YM_Jaffe_Witten_Submission_v8.md`
-- `docs/V8_TRANSFER_SOURCE_AUDIT.md`
-- `docs/V7_TERMINAL_REDUCTION.md`
-- `docs/JW_GATE_CLOSURE_v6.md`
-- `docs/ATOMIC_ESTIMATE_ATTACK_v6.md`
-- `results/FINAL_ATOMIC_FRONTIER_v7.json`
-- `results/transfer_gap_certificate_v8.json`
-- `results/source_scaling_certificate_v8.json`
-- `results/final_verifier_summary_v8.json`
+## Repository policy
+
+`STATUS.md` is the single current status record. Historical numbered artifacts may remain in Git history, but the canonical files above are the only files a reviewer needs to start from.
