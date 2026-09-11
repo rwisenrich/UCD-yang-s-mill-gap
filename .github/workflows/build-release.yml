@@ -1,17 +1,11 @@
-name: build-versioned-release
+name: build-stable-submission
+
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'paper/parts/**'
-      - 'src/**'
-      - 'tests/**'
-      - 'requirements.txt'
-      - 'run_all.py'
-      - '.github/workflows/build-release.yml'
   workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,28 +20,21 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex fonts-dejavu-core zip
-      - name: Verify mathematics and regenerate machine results
+      - name: Verify mathematics and computational artifacts
         run: |
           python run_all.py
-          python -m pytest -q | tee results/pytest_v4.txt
-      - name: Assemble manuscript source
-        run: cat paper/parts/part_* > paper/UCD_YM_Jaffe_Witten_Submission_v4.md
-      - name: Build PDF and DOCX
+          python -m pytest -q | tee pytest.txt
+      - name: Build canonical PDF and DOCX
         run: |
-          pandoc paper/UCD_YM_Jaffe_Witten_Submission_v4.md -o paper/UCD_YM_Jaffe_Witten_Submission_v4.docx --from markdown+tex_math_dollars --standalone
-          pandoc paper/UCD_YM_Jaffe_Witten_Submission_v4.md -o paper/UCD_YM_Jaffe_Witten_Submission_v4.pdf --from markdown+tex_math_dollars --pdf-engine=xelatex --standalone -V mainfont='DejaVu Serif' -V sansfont='DejaVu Sans' -V monofont='DejaVu Sans Mono'
-      - name: Build release archive and checksums
+          mkdir -p dist
+          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o dist/UCD_YM_Jaffe_Witten_Submission.docx --from markdown+tex_math_dollars --standalone
+          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o dist/UCD_YM_Jaffe_Witten_Submission.pdf --from markdown+tex_math_dollars --pdf-engine=xelatex --standalone -V mainfont='DejaVu Serif' -V sansfont='DejaVu Sans' -V monofont='DejaVu Sans Mono'
+      - name: Build stable verification archive
         run: |
-          mkdir -p release
-          find . -type f ! -path './.git/*' ! -path './release/*' ! -path './.pytest_cache/*' ! -path '*/__pycache__/*' -print0 | sort -z | xargs -0 sha256sum > MANIFEST.sha256
-          zip -qr release/UCD_YM_JAFFE_WITTEN_SUBMISSION_v4_0_FULL_PACKAGE.zip . -x '.git/*' '.pytest_cache/*' '*/__pycache__/*' 'release/*'
-          sha256sum release/UCD_YM_JAFFE_WITTEN_SUBMISSION_v4_0_FULL_PACKAGE.zip > release/UCD_YM_JAFFE_WITTEN_SUBMISSION_v4_0_RELEASE_SHA256.txt
-      - name: Commit generated verification/release artifacts
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add results figures MANIFEST.sha256 paper/UCD_YM_Jaffe_Witten_Submission_v4.md paper/UCD_YM_Jaffe_Witten_Submission_v4.pdf paper/UCD_YM_Jaffe_Witten_Submission_v4.docx release
-          if ! git diff --cached --quiet; then
-            git commit -m 'Build v4.0 verification artifacts and submission package'
-            git push
-          fi
+          find . -type f ! -path './.git/*' ! -path './.pytest_cache/*' ! -path '*/__pycache__/*' ! -path './dist/*' -print0 | sort -z | xargs -0 sha256sum > dist/MANIFEST.sha256
+          zip -qr dist/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE.zip . -x '.git/*' '.pytest_cache/*' '*/__pycache__/*' 'dist/*'
+          sha256sum dist/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE.zip > dist/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE_SHA256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: UCD-Yang-Mills-Jaffe-Witten-submission
+          path: dist/
