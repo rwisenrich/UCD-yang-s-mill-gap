@@ -32,8 +32,8 @@ jobs:
           python src/final_verifier_v6.py
       - name: Build canonical manuscript binaries
         run: |
-          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o paper/UCD_YM_Jaffe_Witten_Submission.docx --from markdown+tex_math_dollars --standalone
-          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o paper/UCD_YM_Jaffe_Witten_Submission.pdf --from markdown+tex_math_dollars --pdf-engine=xelatex --standalone -V mainfont='DejaVu Serif' -V sansfont='DejaVu Sans' -V monofont='DejaVu Sans Mono'
+          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o paper/UCD_YM_Jaffe_Witten_Submission.docx --from markdown+tex_math_dollars+tex_math_single_backslash --standalone
+          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o paper/UCD_YM_Jaffe_Witten_Submission.pdf --from markdown+tex_math_dollars+tex_math_single_backslash --pdf-engine=xelatex --standalone -V mainfont='DejaVu Serif' -V sansfont='DejaVu Sans' -V monofont='DejaVu Sans Mono'
       - name: Build checksum manifest and stable archive
         run: |
           find . -type f ! -path './.git/*' ! -path './.pytest_cache/*' ! -path '*/__pycache__/*' ! -path './release/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE_PACKAGE.zip' ! -path './release/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE_SHA256.txt' -print0 | sort -z | xargs -0 sha256sum > MANIFEST.sha256
@@ -45,5 +45,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add paper/UCD_YM_Jaffe_Witten_Submission.pdf paper/UCD_YM_Jaffe_Witten_Submission.docx MANIFEST.sha256 results/ release/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE_PACKAGE.zip release/UCD_YM_JAFFE_WITTEN_SUBMISSION_COMPLETE_SHA256.txt
-          git commit -m 'Finalize stable submission upload' || exit 0
-          git push
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Finalize stable submission upload'
+          git pull --rebase origin main
+          git push origin HEAD:main
