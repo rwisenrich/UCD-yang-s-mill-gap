@@ -1,0 +1,16 @@
+{
+  "release": "UCD_YM_JAFFE_WITTEN_SUBMISSION_v6_0",
+  "old_open_rows": 8,
+  "old_open_rows_remaining_as_independent": 0,
+  "atomic_estimates_remaining": 2,
+  "atomic_ids": [
+    "A1_NONPERTURBATIVE_RG_CORRIDOR",
+    "A2_SOURCE_EXTENDED_RG_UNIFORMITY"
+  ],
+  "logical_completion": "A1 AND A2 imply the full Jaffe-Witten target through the proved v6 reduction theorems and OS reconstruction.",
+  "regression": {
+    "pytest": "24/24 PASS",
+    "independent_v6": "9/9 PASS",
+    "final_meta_verifier": "6/6 PASS"
+  }
+}
