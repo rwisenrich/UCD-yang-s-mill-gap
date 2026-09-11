@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-title: UCD Yang-Mills Jaffe-Witten Submission Package
+title: UCD Yang-Mills Existence and Mass Gap - Jaffe-Witten v7 Verification Package
 authors:
   - family-names: Wise
     given-names: Richard
-version: 3.0.0
+version: 7.0.0
 date-released: 2026-09-10
-message: Please cite this repository and the versioned release used for verification.
+message: Please cite this repository and the exact versioned release used for verification.
