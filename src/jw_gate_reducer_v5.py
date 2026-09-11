@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""Rewrite the Jaffe-Witten obligation ledger after exact v5 reductions."""
+from __future__ import annotations
+import csv,json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]; RES=ROOT/'results'
+ROWS=[
+('JW-00','Compact-group proof regulator','L2(G), Peter-Weyl exhaustion','THEOREM_CLOSED','v4 Peter-Weyl + T7'),
+('JW-01','Local gauge covariance','U_xy -> G_x U_xy G_y^-1','THEOREM_CLOSED','Wilson/heat-kernel compact-group regulator'),
+('JW-02','Gauge-invariant local observable algebra / Gauss sector','A_phys=A^G','THEOREM_CLOSED','compact-group construction'),
+('JW-03','Euclidean reflection positivity at regulator','omega_a(Theta F F)>=0','THEOREM_CLOSED','Osterwalder-Seiler / positive heat-kernel transfer'),
+('JW-04','Independent refinement and thermodynamic parameters','a_r=L*/2^r, L_s->infinity','THEOREM_CLOSED','native Gamma_rs construction'),
+('JW-05','Yang-Mills local continuum action','Wilson plaquette -> Tr F^2','THEOREM_CLOSED_LOCAL_ASYMPTOTICS','small-plaquette expansion'),
+('JW-06A','Asymptotically-free ultraviolet trajectory','beta(g)=-b0(G)g^3+...','THEOREM_CLOSED_UV_STRUCTURE','standard AF + Balaban UV spine'),
+('JW-06B','All-field UV-depth control','sum_j ||R_j|| finite uniformly in UV depth','REDUCED_TO_M1_1','AF summability theorem closes infinite-depth accumulation once the per-scale localized R bound is matched'),
+('JW-07A','Exact Schur correction','Sigma=B(D-E)^-1B*','THEOREM_CLOSED','algebraic identity'),
+('JW-07B','Abstract quadratic Schur massive basin','x0<1 => positive gap floor','THEOREM_CLOSED','v4 certificate'),
+('JW-07C','Exact Wilson RG terminal matching','effective action enters a certified massive terminal basin','REDUCED_TO_M1_2','terminal stability theorem + missing RG norm matching'),
+('JW-07D','Uniform physical spectral gap','inf_(a,L) gap >= m_G>0','REDUCED_TO_M1_3','follows when M1.1-M1.3 are discharged'),
+('JW-07E','Strong-coupling SU(N) endpoint','|beta|<1/[16(d-1)]','THEOREM_CLOSED_EXTERNAL','Shen-Zhu-Zhu'),
+('JW-08A','Thermodynamic-limit existence','weak local state limit at fixed a','THEOREM_CLOSED_EXISTENCE','T1 compactness; uniqueness available in strong endpoint'),
+('JW-08B0','Continuum bounded-holonomy state','state on inductive-limit holonomy algebra','THEOREM_CLOSED_EXISTENCE','T2 compactness/compatibility'),
+('JW-08B1','Continuum Schwinger distributions for local curvature fields','S_n in tempered distributions','REDUCED_TO_M2_1_M2_2','source-renormalized composite-field bounds and convergence'),
+('JW-08C','Nontriviality','continuum not zero-coupling Gaussian fixed point','REDUCED_TO_M2_4','T6: follows from realized nonzero AF running interaction/OPE datum'),
+('JW-08D','Local curvature-polynomial quantum fields','O_P^a -> O_P','REDUCED_TO_M2_1_M2_2','operator mixing/source RG'),
+('JW-08E','AF/OPE/stress tensor short-distance structure','beta, T_mn Ward, OPE','REDUCED_TO_M2_4','source-extended RG master estimate'),
+('JW-09A','Reflection positivity survives limits','omega(Theta F F)>=0','THEOREM_CLOSED_LIMIT','T3'),
+('JW-09B0','Full translations','R4 translation invariance','THEOREM_CLOSED_IF_M2_CONTINUITY','T4 dense subgroup extension'),
+('JW-09B1','O(4) rotational restoration','S_n(Rx)=S_n(x)','REDUCED_TO_M2_3','anisotropy estimate'),
+('JW-09C0','Time clustering from spectral gap','connected correlation <= e^-mt','THEOREM_CLOSED_IF_M1','T5 spectral theorem'),
+('JW-09C1','OS regularity/symmetry package','temperedness, covariance, cluster','REDUCED_TO_M2_PLUS_M1','M2 bounds + T3/T4/T5'),
+('JW-10','OS/Wightman reconstruction','Euclidean data -> H,Omega,P_mu,fields','STANDARD_THEOREM_ON_CLOSED_OS_INPUT','Osterwalder-Schrader'),
+('JW-11','Relativistic nontrivial Yang-Mills on R4','nontrivial reconstructed local theory','DEPENDENT_ON_M2_AND_JW10','M2 + T6 + OS reconstruction'),
+('JW-12A','Continuum spectral exclusion','Spec(H) cap (0,m_G)=empty','DEPENDENT_ON_M1_AND_OS','M1 + T5 + OS spectral representation'),
+('JW-12B','Finite positive mass parameter','0<m_G<infinity','DEPENDENT_ON_M1_M2','M1 gap + M2 local finite-energy spectral weight'),
+('JW-13','Any compact simple G','construction parameterized by G','THEOREM_CLOSED_AS_STRUCTURAL_REDUCTION','T7; M1(G),M2(G) constants may depend on fixed G'),
+]
+def main():
+  RES.mkdir(exist_ok=True); fields=['id','requirement','formula','status','dependency']
+  with open(RES/'jaffe_witten_obligation_ledger_v5.csv','w',newline='') as f:
+    w=csv.writer(f);w.writerow(fields);w.writerows(ROWS)
+  statuses={}
+  for r in ROWS: statuses[r[3]]=statuses.get(r[3],0)+1
+  critical=['M1.1','M1.2','M1.3','M2.1','M2.2','M2.3','M2.4']
+  graph={'release':'v5.0','old_open_rows_eliminated_as_independent_gates':True,'status_counts':statuses,'remaining_master_estimate_components':critical,'master_theorems':['M1_GLOBAL_RG_GAP','M2_LOCAL_FIELD_CONTINUUM'],'completion_implication':'M1 + M2 + closed limit/RP/group lemmas => OS reconstruction + continuum mass gap + nontrivial Yang-Mills local field theory.'}
+  (RES/'PROOF_GRAPH_v5.json').write_text(json.dumps(graph,indent=2)); print(json.dumps(graph,indent=2))
+if __name__=='__main__': main()
