@@ -1,0 +1,8 @@
+source,domain,rigorous_input_used,uniform_in_volume,removes_uv_cutoff,provides_complete_AF_to_strong_corridor,provides_full_local_source_family,role_in_v6
+Jaffe-Witten 2006,official specification,"4D QFT + local gauge-invariant curvature operators + AF/OPE/stress tensor + finite positive mass gap",NA,NA,no,no,target
+Osterwalder-Seiler 1978,lattice gauge theory,"lattice gauge framework and reflection positivity",finite-regulator property,NA,no,no,RP regulator input
+Balaban 1987-1989,weak-coupling RG,"localized RG, cluster/large-field control, ultraviolet stability",yes within stated UV estimates,UV stability program,no,not full J-W source family,UV endpoint architecture
+Magnen-Rivasseau-Seneor 1993,constructive YM4,"SU(2) Schwinger functions with fixed infrared cutoff and no UV cutoff",IR cutoff retained,yes,no,partial source/Slavnov structure,independent UV comparison
+Shen-Zhu-Zhu 2023,strong-coupling lattice,"infinite-volume uniqueness, Poincare/LSI, exponential correlation decay under strong-coupling condition",yes,not a continuum-limit theorem,no,no,massive terminal endpoint
+Guo-Li-Yang-Zhu 2025,SU3 positivity bootstrap,"rigorous finite-lattice Wilson-loop bounds from positivity and Schwinger-Dyson equations",finite lattice,no,no,no,intermediate-coupling constraint lane
+UCD v6,exact reduction,"T7-T16 compactness/source/symmetry/spectral and summability reductions",yes when hypotheses are uniform,conditional on A1/A2,no,no,reduces eight gates to A1+A2
