@@ -1,41 +1,27 @@
-# External theorem and methods audit
+# External literature audit — v6
 
-This audit records the external mathematical machinery used or tested against the UCD A→B→C→D Yang–Mills construction. Its purpose is to keep the proof dependencies explicit and prevent a numerical regulator statement from being substituted for a continuum theorem.
+## Official specification
 
-## Official target
+Jaffe and Witten require a nontrivial four-dimensional quantum Yang-Mills theory for any compact simple gauge group, with axiomatic properties at least at the Wightman/Osterwalder-Schrader level and a positive finite mass gap. Their problem discussion also calls for local operators corresponding to gauge-invariant curvature differential polynomials, asymptotically-free short-distance behavior, a stress tensor and OPE structure.
 
-**Jaffe–Witten, Quantum Yang–Mills Theory.** Target: for any compact simple gauge group G, construct a nontrivial quantum Yang–Mills theory on R^4 with a mass gap Delta > 0, with axiomatic properties at least as strong as the cited constructive/Wightman frameworks. The problem statement also asks for local quantum fields corresponding to gauge-invariant curvature polynomials and their covariant derivatives, with short-distance behavior matching asymptotic freedom and perturbative renormalization, including a stress tensor and OPE structure.
+## Rigorous ultraviolet side
 
-## Regulator positivity and reconstruction
+Balaban's 1987–1989 renormalization-group series develops localized effective actions, coupling renormalization, cluster expansions and large-field R-operation estimates. The abstract of *Large field renormalization II* states that those bounds complete the ultraviolet-stability proof for four-dimensional pure gauge field theories. The v6 AF-tail theorem uses only a source-shaped localized bound `||R_j|| <= C g_j^p` with `p>2`; it then proves ultraviolet-depth summability independently.
 
-**Osterwalder–Seiler (1978).** Supplies reflection positivity/positive-transfer structure for lattice gauge theory and strong-coupling cluster-expansion control.
+Magnen–Rivasseau–Seneor (CMP 155, 1993) construct pure SU(2) Yang-Mills Schwinger functions with a fixed infrared cutoff and no ultraviolet cutoff and verify the associated Slavnov identities nonperturbatively. This is an independent ultraviolet comparison route.
 
-**Osterwalder–Schrader (1973, 1975).** Supplies the reconstruction theorem from reflection-positive Euclidean Schwinger functions to a Hilbert-space relativistic QFT once the OS hypotheses are established.
+## Rigorous strong-coupling side
 
-## Ultraviolet renormalization
+Shen–Zhu–Zhu prove for SU(N), under `|beta| < 1/[16(d-1)]` in their normalization, uniqueness of the infinite-volume measure, finite-volume convergence, Poincare/log-Sobolev inequalities and exponential decay for a large observable class. Matching `N beta = 2/g^2` gives the explicit SU(3), d=4 sufficient threshold `g^2>32`. At g=8 the Bakry-Emery margin used by v6 is `K_S=0.75`.
 
-**Balaban (1987–1989).** Supplies rigorous four-dimensional lattice-gauge renormalization machinery in the ultraviolet/small-field regime, including effective actions, coupling-constant renormalization, cluster expansions, and large-field R-operation estimates. The UCD proof uses this as the rigorous UV input and states the remaining all-field matching to a fixed physical block as Bridge Lemma A.
+## Positivity/bootstrap lane
 
-**Magnen–Rivasseau–Seneor (1993).** Constructed YM4 with an infrared cutoff. This is a comparison point for the ultraviolet construction but does not by itself supply the full R^4 infrared/mass-gap theorem.
+Guo–Li–Yang–Zhu (JHEP 2025) derive rigorous convex bounds for SU(3) lattice Yang-Mills loop expectation values from Hermitian positivity, reflection positivity and Schwinger–Dyson loop equations. This provides an independent finite-lattice route for constraining the intermediate-coupling corridor.
 
-## Strong-coupling infrared endpoint
+## Formal finite-lattice comparison lane
 
-**Shen–Zhu–Zhu, arXiv:2204.12737, revised 2026.** For SU(N) lattice Yang–Mills in their t'Hooft-scaled normalization, |beta| < 1/[16(d-1)] gives uniqueness of the infinite-volume invariant measure, finite-volume convergence, Poincare and logarithmic-Sobolev inequalities, and exponential decay of correlations. In d=4 the explicit sufficient condition is |beta| < 1/48. This supplies a rigorous strong-coupling thermodynamic/mass-gap endpoint once the exact blocked action is matched to the theorem's action class.
+The public David J. Fox Lean repository was inspected as an independent formal-lattice comparison. Its own roadmap explicitly separates its formal lattice lower-bound tower from “YM Surface #1,” the continuum Clay problem, which it marks as open. No continuum theorem is imported from that repository.
 
-**Yarotsky-type gapped-phase stability.** Supplies a second infrared lane for bounded finite-range perturbations of a gapped product phase, subject to its operator hypotheses.
+## Current mathematical concentration
 
-## Correlation and spectral transfer
-
-**Hastings–Koma.** For local Hamiltonian systems under its hypotheses, a spectral gap implies exponential clustering. The submission also proves the converse spectral-exclusion lemma needed after OS reconstruction: a positive spectral measure with a uniform exp(-m t) Euclidean-time bound has no support in (0,m).
-
-## Positivity bootstrap
-
-**Guo–Li–Yang–Zhu (2025), Bootstrapping SU(3) Lattice Yang–Mills Theory.** Hermitian positivity, reflection positivity, and Schwinger–Dyson loop equations generate rigorous finite-lattice convex bounds. This is retained as an independent lane for bounding block observables and, in a future extension, the Schur/RG constants eta, delta, and Delta.
-
-## Public claimed-proof audit
-
-Public repositories and preprints claiming Yang–Mills mass-gap proofs were searched as idea sources. No step from a claimed proof is imported merely because it is public. A claimed theorem can enter the proof graph only after its hypotheses and derivation have been checked independently against the same Jaffe–Witten obligation ledger.
-
-## Result of the audit
-
-The literature supplies rigorous endpoints on both sides of the remaining central bridge: ultraviolet RG control at weak bare coupling and infrared uniqueness/exponential clustering at sufficiently strong lattice coupling. The precise high-leverage theorem is therefore the regulator-uniform all-field matching that carries the exact four-dimensional compact-group blocked action from the asymptotically-free UV regime into a quantitatively certified infrared gap basin while preserving gauge invariance, reflection positivity, locality, and the operator bounds required for continuum Schwinger-function convergence.
+The published rigorous literature supplies strong control of the ultraviolet end and a rigorous massive strong-coupling endpoint. v6 proves that all intervening compactness, reflection-positivity, spectral-transfer, source-Cauchy and ultraviolet-summability steps can be reduced to two atomic estimates: A1 (the exact nonperturbative RG corridor) and A2 (uniform source-extended RG).
