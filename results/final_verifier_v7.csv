@@ -1,8 +1,0 @@
-check,status,value
-bounded_source_certificate_pass,PASS,6
-zero_free_radius_positive,PASS,0.6931471805599453
-polymer_norm_certificate_pass,PASS,6
-z4_entropy_threshold_exact,PASS,4.1588830833596715
-v7_two_atomic_estimates,PASS,2
-E1_contains_zero_and_source_slices,PASS,
-v6_meta_verifier_carried,PASS,6
