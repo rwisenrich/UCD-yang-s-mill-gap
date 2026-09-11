@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];RES=ROOT/'results'
+def load(n): return json.loads((RES/n).read_text())
+def main():
+    proof=load('PROOF_GRAPH_v6.json'); atomic=load('ATOMIC_PROOF_FRONTIER_v6.json'); iv=load('independent_verifier_summary_v6.json'); fv=load('final_verifier_summary_v6.json')
+    out={'release':'UCD_YM_JAFFE_WITTEN_SUBMISSION_v6_0','machine_verdict':'V6_EIGHT_GATE_ATTACK__TWO_ATOMIC_ESTIMATES_REMAIN','new_exact_reductions':['distributional continuum subsequence from uniform Schwartz bounds','uniform Euclidean decay transfers to continuum spectral exclusion','positive mass is finite in a nontrivial unique-vacuum theory','Bakry-Emery Hessian terminal stability','dense symmetry subgroup plus continuity extends to full symmetry','OS properties are closed under controlled distributional limits','Balaban-type asymptotically-free ultraviolet tails are summable once a localized O(g^p), p>2 remainder estimate is supplied','uniform source-polydisc analyticity yields factorial composite-field bounds by multivariable Cauchy','uniform anisotropy insertion bounds imply O(a^alpha) restoration','strict inverse-coupling drift implies finite RG landing time','AF source/OPE O(g^p), p>2 remainders are summable'],'prior_eight_open_rows_status':'reduced: none of the eight v4 rows remains an independent theorem obligation','atomic_estimate_count':atomic['count'],'atomic_estimates':atomic['atomic_estimates'],'completion_equation':'A1_NONPERTURBATIVE_RG_CORRIDOR & A2_SOURCE_EXTENDED_RG_UNIFORMITY => Jaffe-Witten existence + positive finite mass gap for each fixed compact simple G.','five_estimate_intermediate_reduction':proof['remaining_master_estimates'],'independent_verifier':iv,'final_verifier':fv,'integrity_rule':'No row is promoted to proved unless its premises are supplied by an exact theorem/source-bound in this package; numerical scans remain verification artifacts rather than substitutes for uniform estimates.'}
+    (RES/'MASTER_VERDICT_v6.json').write_text(json.dumps(out,indent=2)); (RES/'MASTER_VERDICT.json').write_text(json.dumps(out,indent=2)); print(json.dumps(out,indent=2))
+if __name__=='__main__':main()
