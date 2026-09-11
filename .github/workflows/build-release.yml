@@ -27,8 +27,8 @@ jobs:
       - name: Build canonical PDF and DOCX
         run: |
           mkdir -p dist
-          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o dist/UCD_YM_Jaffe_Witten_Submission.docx --from markdown+tex_math_dollars --standalone
-          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o dist/UCD_YM_Jaffe_Witten_Submission.pdf --from markdown+tex_math_dollars --pdf-engine=xelatex --standalone -V mainfont='DejaVu Serif' -V sansfont='DejaVu Sans' -V monofont='DejaVu Sans Mono'
+          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o dist/UCD_YM_Jaffe_Witten_Submission.docx --from markdown+tex_math_dollars+tex_math_single_backslash --standalone
+          pandoc paper/UCD_YM_Jaffe_Witten_Submission.md -o dist/UCD_YM_Jaffe_Witten_Submission.pdf --from markdown+tex_math_dollars+tex_math_single_backslash --pdf-engine=xelatex --standalone -V mainfont='DejaVu Serif' -V sansfont='DejaVu Sans' -V monofont='DejaVu Sans Mono'
       - name: Build stable verification archive
         run: |
           find . -type f ! -path './.git/*' ! -path './.pytest_cache/*' ! -path '*/__pycache__/*' ! -path './dist/*' -print0 | sort -z | xargs -0 sha256sum > dist/MANIFEST.sha256
